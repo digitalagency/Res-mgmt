@@ -1,0 +1,21 @@
+body{
+    font-size: 16px;
+}
+.action{
+    display: flex;
+}
+.dt-button{
+    border-radius: 3px !important;
+    -webkit-box-shadow: none !important;
+    box-shadow: none !important;
+    border: 1px solid transparent !important;
+    background: orangered!important;
+    color: #fff!important;
+}
+.glyphicon-file:before, .glyphicon-print:before{
+    padding-right:10px;
+}
+.component-title{
+    font-weight: 800;
+    text-decoration: underline;
+}
