@@ -1,4 +1,8 @@
 @extends('layouts.admin')
+
+@section('title', 'Permission Components')
+@section('page-title', 'Permission Components')
+
 @section('content')
     <div class="row">
         <div class="col-xs-12">

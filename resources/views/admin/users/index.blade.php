@@ -2,12 +2,14 @@
 
 @section('title', 'Employees')
 @section('page-title', 'Employees')
-{{-- @section('page-sub-title', @lang('global.')) --}}
+
 @section('content')
     <div class="box">
         <div class="box-header">
             <h3 class="box-title>">@lang('global.employee.title')</h3>
-            <a href="{{route('employee.create')}}" class="btn btn-success pull-right">@lang('global.app_new')</a>
+            @can('employee-add')
+                <a href="{{route('employee.create')}}" class="btn btn-success pull-right">@lang('global.app_new')</a>
+            @endcan
         </div>
         <div class="box-body">
             <table id="example1" class="table table-bordered table-striped table-hover">

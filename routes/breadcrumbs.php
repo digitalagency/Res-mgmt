@@ -3,6 +3,7 @@ use App\User;
 use App\Models\Admin\Role;
 use App\Models\Admin\Permission;
 use App\Models\Admin\PermissionComponent;
+use App\Models\Admin\Table;
 
 //Home Breadcrumb
 Breadcrumbs::for('home', function ($trail) {
@@ -99,4 +100,27 @@ Breadcrumbs::for('p_component.edit', function ($trail, $id) {
     $p_component = PermissionComponent::find($id);
     $trail->parent('p_component.index');
     $trail->push($p_component->component, route('p_component.edit', $p_component->component));
+});
+
+/*
+*   Table Breadcrumb
+*/
+
+// Home / Tables
+Breadcrumbs::for('table.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Tables', route('table.index'));
+});
+
+// Home / Tables / Create Table
+Breadcrumbs::for('table.create', function ($trail) {
+    $trail->parent('table.index');
+    $trail->push('Add Table', route('table.create'));
+});
+
+// Home / Tables / Create Table / [ Permission ]
+Breadcrumbs::for('table.edit', function ($trail, $id) {
+    $table = Table::find($id);
+    $trail->parent('table.index');
+    $trail->push($table->table_no, route('table.edit', $table->table_no));
 });

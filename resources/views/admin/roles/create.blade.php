@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title', 'Create Role')
+@section('page-title', 'Role')
+@section('page-sub-title','Create')
+
 @section('content')
     <!--Role Create Box Starts Here-->
     <div class="box">

@@ -129,10 +129,22 @@
             <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
         </ul>
         </li>
+        @can('table-access')
+            <li class="treeview">
+                <a href="#">
+                    <i class="fas fa-table"></i> <span>@lang('sidebar.table-mgmt.title')</span>
+                    <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('table.create')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.table-mgmt.new_table')</a></li>
+                    <li><a href="{{route('table.index')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.table-mgmt.all_table')</a></li>
+                </ul>
+            </li>
+        @endcan
         @can('user-access')
             <li class="treeview">
                 <a href="#">
-                    <i class="fa fa-share"></i> <span>@lang('sidebar.user-mgmt.title')</span>
+                    <i class="fas fa-user"></i> <span>@lang('sidebar.user-mgmt.title')</span>
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">

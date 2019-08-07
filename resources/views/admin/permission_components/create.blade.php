@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title', 'Create Permission Component')
+@section('page-title', 'Permission Component')
+@section('page-sub-title','Create')
+
 @section('content')
     <!--Permission Component Create Box Starts Here-->
     <div class="box box-primary">
