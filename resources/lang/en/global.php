@@ -24,6 +24,12 @@ return [
             'password' => 'Password',
         ]
     ],
+    'category' => [
+        'title' => 'Category',
+        'field' => [
+            'name' => 'Name',
+        ]
+    ],
     'app_id' => '#',
     'app_action' => 'Action',
     'app_created_at' => 'Created At',

@@ -30,6 +30,7 @@ class AuthServiceProvider extends ServiceProvider
         $user = \Auth::user();
         if (!app()->runningInConsole()) {
             $roles = Role::with('permissions')->get();
+            // dd($roles); //roles 2
             foreach ($roles as $role) {
                 foreach ($role->permissions as $permission) {
                     $permissionArray[$permission->permission][] = $role->id;

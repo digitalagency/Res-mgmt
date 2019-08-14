@@ -33,6 +33,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('permission', 'Admin\PermissionsController');
 
 
-
     Route::resource('employee', 'Admin\UsersController');
+
+    Route::resource('category','Admin\CategoryController');
+    Route::resource('product', 'Admin\ProductController');
+
 });

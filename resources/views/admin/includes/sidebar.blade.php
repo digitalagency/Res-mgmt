@@ -26,7 +26,7 @@
     <!-- sidebar menu: : style can be found in sidebar.less -->
     <ul class="sidebar-menu">
         <li class="header">MAIN NAVIGATION</li>
-        <li class="active treeview">
+     <!--    <li class="active treeview">
         <a href="#">
             <i class="fa fa-dashboard"></i> <span>Dashboard</span> <i class="fa fa-angle-left pull-right"></i>
         </a>
@@ -34,8 +34,8 @@
             <li class="active"><a href="index.html"><i class="fa fa-circle-o"></i> Dashboard v1</a></li>
             <li><a href="index2.html"><i class="fa fa-circle-o"></i> Dashboard v2</a></li>
         </ul>
-        </li>
-        <li class="treeview">
+        </li> -->
+     <!--    <li class="treeview">
         <a href="#">
             <i class="fa fa-files-o"></i>
             <span>Layout Options</span>
@@ -47,12 +47,13 @@
             <li><a href="pages/layout/fixed.html"><i class="fa fa-circle-o"></i> Fixed</a></li>
             <li><a href="pages/layout/collapsed-sidebar.html"><i class="fa fa-circle-o"></i> Collapsed Sidebar</a></li>
         </ul>
-        </li>
-        <li>
+        </li> -->
+     <!--    <li>
         <a href="pages/widgets.html">
             <i class="fa fa-th"></i> <span>Widgets</span> <small class="label pull-right bg-green">new</small>
         </a>
-        </li>
+        </li> -->
+        <!-- 
         <li class="treeview">
         <a href="#">
             <i class="fa fa-pie-chart"></i>
@@ -113,8 +114,8 @@
             <i class="fa fa-envelope"></i> <span>Mailbox</span>
             <small class="label pull-right bg-yellow">12</small>
         </a>
-        </li>
-        <li class="treeview">
+        </li> -->
+       <!--  <li class="treeview">
         <a href="#">
             <i class="fa fa-folder"></i> <span>Examples</span>
             <i class="fa fa-angle-left pull-right"></i>
@@ -128,7 +129,7 @@
             <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
             <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
         </ul>
-        </li>
+        </li> -->
         @can('user-access')
             <li class="treeview">
                 <a href="#">
@@ -155,12 +156,34 @@
                     </li>
                 </ul>
             </li>
+            <li class="treeview">
+                <a href="#">
+                <i class="fas fa-copyright"></i> <span>@lang('sidebar.cat-mng.title')</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('category.index')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.cat-mng.catg-list')</a></li>
+                    
+                    <li><a href="{{route('category.create')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.cat-mng.add-catg')</a></li>
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="#">
+                <i class="fas fa-file-powerpoint"></i> <span>Product Management</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="{{route('product.index')}}"><i class="fa fa-circle-o"></i> List Product</a></li>
+                    
+                    <li><a href="{{route('product.create')}}"><i class="fa fa-circle-o"></i>Add New Product</a></li>
+                </ul>
+            </li>     
         @endcan
-        <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
+      <!--   <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         <li class="header">LABELS</li>
         <li><a href="#"><i class="fa fa-circle-o text-red"></i> <span>Important</span></a></li>
         <li><a href="#"><i class="fa fa-circle-o text-yellow"></i> <span>Warning</span></a></li>
-        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li>
+        <li><a href="#"><i class="fa fa-circle-o text-aqua"></i> <span>Information</span></a></li> -->
     </ul>
     </section>
     <!-- /.sidebar -->

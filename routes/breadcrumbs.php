@@ -3,6 +3,9 @@ use App\User;
 use App\Models\Admin\Role;
 use App\Models\Admin\Permission;
 use App\Models\Admin\PermissionComponent;
+use App\Models\Admin\Category;
+use App\Models\Admin\Product;
+
 
 //Home Breadcrumb
 Breadcrumbs::for('home', function ($trail) {
@@ -18,6 +21,8 @@ Breadcrumbs::for('employee.index', function ($trail) {
     $trail->parent('home');
     $trail->push('Employees', route('employee.index'));
 });
+
+
 
 // Home / Employees / Create Employee
 Breadcrumbs::for('employee.create', function ($trail) {
@@ -99,4 +104,43 @@ Breadcrumbs::for('p_component.edit', function ($trail, $id) {
     $p_component = PermissionComponent::find($id);
     $trail->parent('p_component.index');
     $trail->push($p_component->component, route('p_component.edit', $p_component->component));
+});
+
+// Home / Category / Create
+Breadcrumbs::for('category.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Category', route('category.create'));
+});
+
+
+// Home / Category /
+Breadcrumbs::for('category.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Category', route('category.index'));
+});
+
+// Home/ Category / edit
+Breadcrumbs::for('category.edit', function ($trail, $id) {
+    $category = Category::find($id);
+    $trail->parent('category.index');
+    $trail->push($category->name, route('category.edit', $category->name));
+});
+
+// Home / Category / Create
+Breadcrumbs::for('product.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Product', route('product.create'));
+});
+
+// Home / Product /
+Breadcrumbs::for('product.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Product', route('product.index'));
+});
+
+// Home/ Product / edit
+Breadcrumbs::for('product.edit', function ($trail, $id) {
+    $product = Product::find($id);
+    $trail->parent('product.index');
+    $trail->push($product->name, route('product.edit', $product->name));
 });

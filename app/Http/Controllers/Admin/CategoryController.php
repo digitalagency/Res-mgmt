@@ -5,12 +5,12 @@ namespace App\Http\Controllers\Admin;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Gate;
-use Hash;
-use App\User;
-use App\Models\Admin\Role;
+// use App\Models\Admin\Category;
 use Session;
 
-class UsersController extends Controller
+use App\Models\Admin\Category;
+
+class CategoryController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -19,10 +19,11 @@ class UsersController extends Controller
      */
     public function index()
     {
-        if(!Gate::allows('employee-view')){
+        if(! Gate::allows('category-view')){
             return abort(401);
         }
-        return view('admin.users.index')->with('users', User::all());
+
+        return view('admin.category.index')->with('categories', Category::all());
     }
 
     /**
@@ -32,10 +33,10 @@ class UsersController extends Controller
      */
     public function create()
     {
-        if (!Gate::allows('employee-add')) {
+       if (!Gate::allows('category-add')) {
             return abort(401);
         }
-        return view('admin.users.create')->with('roles', Role::all());
+        return view('admin.category.create');
     }
 
     /**
@@ -50,21 +51,19 @@ class UsersController extends Controller
             return abort(401);
         }
         $this->validate($request, [
-            'name' => 'required|max:200',
-            'email' => 'required|email|max:250',
-            'password' => 'required|min:8'
+            'name' => 'required',
         ]);
-        $password = Hash::make($request->password);
-        User::create([
+
+        Category::create([
+
             'name' => $request->name,
-            'email' => $request->email,
-            'role_id' => $request->role,
-            'password' => $password,
+            'slug' =>str_slug($request->name),
+            'parent_id' => $request->parent_id,
 
         ]);
-        Session::flash('success', "Employee Created Successfully");
+        Session::flash('success', "Category Created Successfully");
+        return redirect()->route('category.index');
 
-        return redirect()->route('employee.index');
     }
 
     /**
@@ -86,12 +85,10 @@ class UsersController extends Controller
      */
     public function edit($id)
     {
-        if (!Gate::allows('employee-edit'))
-        {
+        if (!Gate::allows('category-edit')) {
             return abort(401);
         }
-        return view('admin.users.edit')->with('user', User::find($id))
-                                        ->with('roles', Role::all());
+        return view('admin.category.edit')->with('category',Category::find($id));
     }
 
     /**
@@ -103,14 +100,15 @@ class UsersController extends Controller
      */
     public function update(Request $request, $id)
     {
-        if (!Gate::allows('employee-edit')) {
+        if (!Gate::allows('category-edit')) {
             return abort(401);
         }
-        User::find($id)->update($request->all());
+        // dd($request->all());
+        Category::find($id)->update($request->all());
 
-        Session::flash('success', 'Employee Updated Successfully!!!');
+        Session::flash('success', 'Category changed');
 
-        return redirect()->route('employee.index');
+        return redirect()->route('category.index');
     }
 
     /**
@@ -121,12 +119,11 @@ class UsersController extends Controller
      */
     public function destroy($id)
     {
-        if (!Gate::allows('employee-delete')) {
+        if(!Gate::allows('category-delete')){
             return abort(401);
         }
-        User::find($id)->delete();
-
-        Session::flash('success', "User Deleted Successfully!!!");
+        Category::find($id)->delete();
         return redirect()->back();
+        
     }
 }

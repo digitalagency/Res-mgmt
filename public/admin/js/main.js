@@ -24,4 +24,22 @@ $(document).ready(function () {
     });
     $("input[type='search']").addClass('form-control');
     $("input[type='search']").css({"font-weight": "500", 'width':'250px', 'padding-left': '10px'});
+
+    $(function () {
+        CKEDITOR.replace('editor1');
+        //bootstrap WYSIHTML5 - text editor
+        $(".textarea").wysihtml5();
+      });
+
+    // for uploading file
+
+    $(".btn-success").click(function(){ 
+          var html = $(".clone").html();
+          $(".increment").after(html);
+      });
+
+      $("body").on("click",".btn-danger",function(){ 
+          $(this).parents(".control-group").remove();
+      });
 });
+
