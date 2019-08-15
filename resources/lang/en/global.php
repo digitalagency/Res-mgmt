@@ -24,7 +24,15 @@ return [
             'password' => 'Password',
         ]
     ],
+    'table-mgmt' => [
+        'title' => 'Table',
+        'table_no' => 'Table No',
+        'capacity' => 'Capacity',
+        'vacant' => 'Vacant',
+        'booked' => 'Booked'
+    ],
     'app_id' => '#',
+    'app_all' => 'All',
     'app_action' => 'Action',
     'app_created_at' => 'Created At',
     'app_deleted_at' => 'Deleted At',
@@ -40,5 +48,5 @@ return [
     'app_trashed' => 'Trashed',
     'app_restore' => 'Restore',
     'app_permanently' => 'Permanently',
-    'welcome' => 'welcome hello '
+    'app_status' => 'Status',
 ];

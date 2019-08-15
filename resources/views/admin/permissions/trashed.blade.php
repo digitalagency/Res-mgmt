@@ -1,4 +1,9 @@
 @extends('layouts.admin')
+
+@section('title', 'Trashed Permissions')
+@section('page-title', 'Permissions')
+@section('page-sub-title','Trashed')
+
 @section('content')
     <div class="box">
         <div class="box-header">

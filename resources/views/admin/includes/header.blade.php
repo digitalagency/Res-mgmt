@@ -235,8 +235,13 @@
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-                <a href="#" class="btn btn-default btn-flat">Sign out</a>
+                    <form id="logout-form" action="{{ route('logout') }}" method="POST" style="">
+                        @csrf
+                        <button class="btn btn-primary">{{__('Logout')}}</button>
+                    </form>
                 </div>
+
+                
             </li>
             </ul>
         </li>

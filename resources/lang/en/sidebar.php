@@ -11,5 +11,10 @@ return [
         'permission' => 'Permissions',
         'permission_component' => 'Permission Components'
     ],
+    'table-mgmt' => [
+        'title' => 'Table Management',
+        'new_table' => 'Add Table',
+        'all_table' => 'All Tables'
+    ],
     
 ];
