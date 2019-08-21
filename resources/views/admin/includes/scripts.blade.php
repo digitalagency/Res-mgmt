@@ -4,16 +4,9 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
     <!-- jQuery UI 1.12.1 -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
-
-    <!-- image upload -->
-   <!--  -->
-
+    
     <!-- Bootstrap 3.3.2 JS -->
     <script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>    
-    <!-- Sparkline -->
-    <script src="{{asset('admin/plugins/sparkline/jquery.sparkline.min.js')}}" type="text/javascript"></script>
-    <!-- jQuery Knob Chart -->
-    <script src="{{asset('admin/plugins/knob/jquery.knob.js')}}" type="text/javascript"></script>
     
     <!-- daterangepicker -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js" type="text/javascript"></script>
@@ -38,18 +31,56 @@
     <!-- AdminLTE App -->
     <script src="{{asset('admin/js/app.min.js')}}" type="text/javascript"></script>    
 
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{asset('admin/js/pages/dashboard.js')}}" type="text/javascript"></script>    
+    <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/vendor/jquery.ui.widget.min.js"></script>
+    <!-- The Templates plugin is included to render the upload/download listings -->
+    <script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
+    <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
+    <script src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
+    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
+    <script src="https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
+    <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
     
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('admin/js/demo.js')}}" type="text/javascript"></script>
+    <!-- blueimp Gallery script -->
+    <script src="https://blueimp.github.io/Gallery/js/jquery.blueimp-gallery.min.js"></script>
+    <!-- The Iframe Transport is required for browsers without support for XHR file uploads -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/jquery.iframe-transport.min.js"></script>
+    <!-- The basic File Upload plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/jquery.fileupload.min.js"></script>
+    <!-- The File Upload processing plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/jquery.fileupload-process.min.js"></script>
+    <!-- The File Upload image preview & resize plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/jquery.fileupload-image.min.js"></script>
+    <!-- The File Upload validation plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/jquery.fileupload-validate.min.js"></script>
+    <!-- The File Upload user interface plugin -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/jquery.fileupload-ui.min.js"></script>
+    
+    <script src="{{asset('admin/js/toastr.min.js')}}"></script>
 
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.4/js/fileinput.js" defer></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.4/themes/fa/theme.js" defer></script>
+    <script>
+
+        @if(Session::has('success'))
+        toastr.options = {
+            "closeButton": true,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-bottom-left",
+            "preventDuplicates": true,
+            "showDuration": "300",
+            "hideDuration": "5000",
+            "timeOut": "0",
+            "extendedTimeOut": "0",
+        };
+            toastr.success("{{Session::get('success')}}");
+        @endif
+        @if(Session::has('info'))
+            toastr.info("{{Session::get('info')}}");
+        @endif
+    </script>
 
     <!--Custom Script-->
     <script src="{{asset('admin/js/main.js')}}" defer></script>
-
-    
     <!-- multiple image upload  -->
+    <script src="{{asset('admin/js/multiImage.js')}}" defer></script>
 
