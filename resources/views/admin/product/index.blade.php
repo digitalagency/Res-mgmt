@@ -19,31 +19,52 @@
 						<th>Status</th>
 						<th>Featured</th>
 						<th>Created At</th>
-						@can('product-action')
+						{{-- @can('product-action') --}}
 							<th>Action</th>
-						@endcan
+						{{-- @endcan --}}
 					</tr>
 				</thead>
 				<tbody>
-					@if($products->count()>0)
+					@if($products->count() > 0)
 						@foreach($products as $product)
+						{{-- @php(dd($product)) --}}
 							<tr>
 								<td>{{$product->name}}</td>
 								<td>{{$product->category->name}}</td>
 								<td>{{$product->price}}</td>
 								<td>{{$product->description}}</td>
-								<td>{{$product->status}}</td>
-								<td>{{$product->featured}}</td>
+								<td>
+									<input hidden name="id" value="{{$product->id}}">
+									<label class="switch product-view">
+										<input type="checkbox" name="status" value="{{$product->status}}" 
+										@if ($product->status == 1)
+											checked
+										@endif
+										>
+										<span class="slider round"></span>
+									</label>
+								</td>
+								<td>
+									<input hidden name="id" value="{{$product->id}}">
+									<label class="switch product-view">
+										<input type="checkbox" name="featured" value="{{$product->featured}}" 
+										@if ($product->featured == 1)
+											checked
+										@endif
+										>
+										<span class="slider round"></span>
+									</label>
+								</td>
 								<td>{{$product->created_at->toFormattedDateString()}}</td>
 
-								@can('product-action')
+								{{-- @can('product-action') --}}
 									<td class="action">
-										@can('product-edit')
+										{{-- @can('product-edit') --}}
                 							<a href="{{route('product.edit', ['id' => $product->id])}}" data-toggle="tooltip" title="@lang('global.app_edit')" class="btn btn-info btn-sm">
                 							<i class="far fa-edit"></i>
                                             </a>
-                                        @endcan
-                                        @can('product-delete')
+                                        {{-- @endcan --}}
+                                        {{-- @can('product-delete') --}}
                                         	<form action="{{route('product.destroy', ['id' => $product->id])}}" method="post" >
                                             @csrf
                                             @method('delete')
@@ -51,9 +72,9 @@
                                             <i class="far fa-trash-alt"></i>
                                             </button>
                                             </form>
-                                        @endcan
+                                        {{-- @endcan --}}
 									</td>
-								@endcan
+								{{-- @endcan --}}
 							</tr>
 						@endforeach
 					@else

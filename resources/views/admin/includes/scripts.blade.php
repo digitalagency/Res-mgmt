@@ -61,17 +61,17 @@
     <script>
 
         @if(Session::has('success'))
-        toastr.options = {
-            "closeButton": true,
-            "newestOnTop": true,
-            "progressBar": true,
-            "positionClass": "toast-bottom-left",
-            "preventDuplicates": true,
-            "showDuration": "300",
-            "hideDuration": "5000",
-            "timeOut": "0",
-            "extendedTimeOut": "0",
-        };
+            toastr.options = {
+                "closeButton": true,
+                "newestOnTop": true,
+                "progressBar": true,
+                "positionClass": "toast-bottom-left",
+                "preventDuplicates": true,
+                "showDuration": "300",
+                "hideDuration": "5000",
+                "timeOut": "0",
+                "extendedTimeOut": "0",
+            };
             toastr.success("{{Session::get('success')}}");
         @endif
         @if(Session::has('info'))

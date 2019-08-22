@@ -50,6 +50,9 @@ class RolesController extends Controller
         if (!Gate::allows('role-add')) {
             return abort(401);
         }
+        $this->validate($request, [
+            'role' => 'required'
+        ]);
         $role = Role::create($request->all());
         $role->permissions()->sync($request->permission);
 
@@ -100,6 +103,8 @@ class RolesController extends Controller
         $role = Role::findOrFail($id);
         $role->update($request->all());
         $role->permissions()->sync(array_filter((array) $request->permission));
+
+        Session::flash('success', 'Role Updated Successfully!!!');
 
         return redirect()->route('role.index');
     }

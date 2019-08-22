@@ -28,5 +28,20 @@
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.4/css/fileinput.min.css">
+    <link
+      rel="stylesheet"
+      href="https://blueimp.github.io/Gallery/css/blueimp-gallery.min.css"
+    />
+    <!-- CSS to style the file input field as button and adjust the Bootstrap progress bars -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload-ui.min.css" />
+    <!-- CSS adjustments for browsers with JavaScript disabled -->
+    <noscript
+      ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload-noscript.min.css"
+    /></noscript>
+    <noscript
+      ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload-ui-noscript.min.css"
+    /></noscript>
     <!--Custom CSS-->
+    <link rel="stylesheet" href="{{asset('admin/css/toastr.min.css')}}">
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">

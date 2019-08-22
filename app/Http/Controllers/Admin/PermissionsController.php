@@ -49,11 +49,16 @@ class PermissionsController extends Controller
         if (!Gate::allows('permission-add')) {
             return abort(401);
         }
+        $this->validate($request,[
+            'permission' =>'required'
+        ]);
         $permission = str_slug($request->permission);
         Permission::create([
             'permission' => $permission,
             'p_component_id' => $request->component
         ]);
+
+        Session::flash('success', 'Permission Updated Successfully!!!');
         return redirect()->back();
     }
 

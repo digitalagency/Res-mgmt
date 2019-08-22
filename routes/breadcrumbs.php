@@ -144,3 +144,9 @@ Breadcrumbs::for('product.edit', function ($trail, $id) {
     $trail->parent('product.index');
     $trail->push($product->name, route('product.edit', $product->name));
 });
+
+// Home / Product /
+Breadcrumbs::for('image', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Product', route('image'));
+});

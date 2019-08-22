@@ -34,8 +34,11 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
 
     Route::resource('employee', 'Admin\UsersController');
-
+    Route::get('/updatestatus', 'Admin\ProductController@status');
     Route::resource('category','Admin\CategoryController');
+    Route::post('/product/edit/{name}', 'Admin\ProductController@update')->name('product.u');
     Route::resource('product', 'Admin\ProductController');
+    Route::delete('/image/delete/{id}', 'Admin\ImageController@destroy')->name('product.image.destroy');
 
+    
 });
