@@ -30,6 +30,43 @@ return [
             'name' => 'Name',
         ]
     ],
+    'header' => [
+        'title' => 'Header Content',
+        'fields' => [
+            'title' => 'Title',
+            'contact' => 'Contact',
+        ]
+    ],
+    'footer' => [
+        'title' => 'Footer Content',
+        'title1' => 'Find and Reservation',
+        'fieldHeader' => [
+            'reservation' => 'Find Reservation',
+            'schedule' => 'Schedule Management',
+            'media' => 'Media Links',
+        ],
+        'fields1' => [
+            'address' => 'Address',
+            'email' => 'Email',
+            'viber' => 'Viber',
+        ],
+        'fields2' => [
+            'close' => 'Close Day',
+            'firstOpen' => 'First Open Day',
+            'firstTime' => 'First Open Time',
+            'secondOpen' => 'Second Open Day',
+            'secondTime' => 'Second Open Time',
+        ],
+        'fields3' => [
+            'facebook' => 'Facebook',
+            'instagram' => 'Instagram',
+            'twitter' => 'Twitter',
+            'linkedIn' => 'LinkedIn',
+            'google' => 'Google',
+        ] 
+
+    ],
+
     'app_id' => '#',
     'app_action' => 'Action',
     'app_created_at' => 'Created At',

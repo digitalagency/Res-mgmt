@@ -5,21 +5,20 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
         <div class="pull-left image">
-        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
         </div>
         <div class="pull-left info">
-        <p>Alexander Pierce</p>
-
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <p>Alexander Pierce</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
     </div>
     <!-- search form -->
     <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search..."/>
-        <span class="input-group-btn">
-            <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-        </span>
+            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+            <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
         </div>
     </form>
     <!-- /.search form -->
@@ -177,7 +176,31 @@
                     
                     <li><a href="{{route('product.create')}}"><i class="fa fa-circle-o"></i>Add New Product</a></li>
                 </ul>
-            </li>     
+            </li>
+            <li class="treeview">
+                <a href="#">
+                <i class="fas fa-user-circle"></i> <span>Manage Profile</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <!-- <li><a href="{{route('profileHeader.index')}}"><i class="fa fa-circle-o"></i>Header</a></li> -->
+                    <li>
+                        <a href="#"><i class="fa fa-circle-o"></i> Header <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{route('profileHeader.index')}}"><i class="fa fa-circle-o"></i>List Header Content</a></li>
+                            <li><a href="{{route('profileHeader.create')}}"><i class="fa fa-circle-o"></i>Add Header Content</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-circle-o"></i>Footer<i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{route('footerFind.index')}}"><i class="fa fa-circle-o"></i>List Footer Content</a></li>
+                            <li><a href="{{route('footerFind.create')}}"><i class="fa fa-circle-o"></i>Add footer content</a></li>
+                        </ul>
+                    </li>
+                </ul>
+            </li>
+
         @endcan
       <!--   <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         <li class="header">LABELS</li>

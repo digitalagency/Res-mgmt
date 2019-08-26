@@ -36,6 +36,15 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('employee', 'Admin\UsersController');
 
     Route::resource('category','Admin\CategoryController');
+    
     Route::resource('product', 'Admin\ProductController');
+    
+    Route::resource('profileHeader', 'Admin\ProfileHeaderController');
+    
+    Route::resource('footerFind', 'Admin\FooterFindController');
+
+    Route::resource('footerMedia', 'Admin\FooterMediaController');
+
+    Route::resource('footerSchedule', 'Admin\FooterScheduleController');
 
 });

@@ -5,9 +5,6 @@
     <!-- jQuery UI 1.12.1 -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
 
-    <!-- image upload -->
-   <!--  -->
-
     <!-- Bootstrap 3.3.2 JS -->
     <script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>    
     <!-- Sparkline -->
@@ -38,18 +35,16 @@
     <!-- AdminLTE App -->
     <script src="{{asset('admin/js/app.min.js')}}" type="text/javascript"></script>    
 
-    <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
-    <script src="{{asset('admin/js/pages/dashboard.js')}}" type="text/javascript"></script>    
-    
-    <!-- AdminLTE for demo purposes -->
-    <script src="{{asset('admin/js/demo.js')}}" type="text/javascript"></script>
-
      <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.4/js/fileinput.js" defer></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.4/themes/fa/theme.js" defer></script>
+
+    <!-- for time picker -->
+    <script src="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
+
+    <script type="text/javascript" src="datepair.js"></script>
 
     <!--Custom Script-->
     <script src="{{asset('admin/js/main.js')}}" defer></script>
 
     
-    <!-- multiple image upload  -->
 

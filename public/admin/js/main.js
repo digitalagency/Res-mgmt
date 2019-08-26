@@ -31,6 +31,11 @@ $(document).ready(function () {
         $(".textarea").wysihtml5();
       });
 
+
+    $( function() {
+        $( "#tabs" ).tabs();
+    });
+
     // for uploading file
 
     $(".btn-success").click(function(){ 
@@ -41,5 +46,12 @@ $(document).ready(function () {
       $("body").on("click",".btn-danger",function(){ 
           $(this).parents(".control-group").remove();
       });
+
+       $('#timeRange .time').timepicker({
+        'showDuration': true,
+        'timeFormat': 'g:ia'
+    });
+      var basicExampleEl = document.getElementById('timeRange');
+      var datepair = new Datepair(basicExampleEl);
 });
 

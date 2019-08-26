@@ -5,6 +5,10 @@ use App\Models\Admin\Permission;
 use App\Models\Admin\PermissionComponent;
 use App\Models\Admin\Category;
 use App\Models\Admin\Product;
+use App\Models\Admin\Header;
+use App\Models\Admin\FindReservation;
+use App\Models\Admin\Schedule;
+use App\Models\Admin\SocialMediaLinks;
 
 
 //Home Breadcrumb
@@ -143,4 +147,57 @@ Breadcrumbs::for('product.edit', function ($trail, $id) {
     $product = Product::find($id);
     $trail->parent('product.index');
     $trail->push($product->name, route('product.edit', $product->name));
+});
+
+// Home / Header Information / Create
+Breadcrumbs::for('profileHeader.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Header Information', route('profileHeader.create'));
+});
+
+
+// Home / Header Contents /
+Breadcrumbs::for('profileHeader.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Header Contents', route('profileHeader.index'));
+});
+
+// Home/ Header / edit
+Breadcrumbs::for('profileHeader.edit', function ($trail, $id) {
+    $header = Header::find($id);
+    $trail->parent('profileHeader.index');
+    $trail->push($header->title, route('profileHeader.edit', $header->title));
+});
+
+// Home / Footer / Create
+Breadcrumbs::for('footerFind.create', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Footer Information', route('footerFind.create'));
+});
+
+// Home / Footer Contents /
+Breadcrumbs::for('footerFind.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Footer Contents', route('footerFind.index'));
+});
+
+// Home/ Footer / Edit
+Breadcrumbs::for('footerFind.edit', function ($trail, $id) {
+    $reservation = FindReservation::find($id);
+    $trail->parent('footerFind.index');
+    $trail->push($reservation->address, route('footerFind.edit', $reservation->address));
+});
+
+// Home/ Footer / Edit
+Breadcrumbs::for('footerSchedule.edit', function ($trail, $id) {
+    $schedule = Schedule::find($id);
+    $trail->parent('footerFind.index');
+    $trail->push($schedule->close_day, route('footerSchedule.edit', $schedule->close_day));
+});
+
+// Home/ Footer / Edit
+Breadcrumbs::for('footerMedia.edit', function ($trail, $id) {
+    $media = SocialMediaLinks::find($id);
+    $trail->parent('footerFind.index');
+    $trail->push($media->facebook, route('footerSchedule.edit', $media->facebook));
 });
