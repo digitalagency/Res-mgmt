@@ -138,44 +138,80 @@
                 </a>
                 <ul class="treeview-menu">
                     <li>
-                        <a href="#"><i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.emp.title') <i class="fa fa-angle-left pull-right"></i></a>
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.emp.title') 
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{route('employee.create')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.emp.add-emp')</a></li>
+                            <li>
+                                <a href="{{route('employee.create')}}">
+                                    <i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.emp.add-emp')
+                                </a>
+                            </li>
                             <li><a href="{{route('employee.index')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.emp.all-emp')</a></li>
                         </ul>
                     </li>
-                    <li><a href="{{route('role.index')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.role')</a></li>
                     <li>
-                        <a href="#"><i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.permission') <i class="fa fa-angle-left pull-right"></i></a>
+                        <a href="{{route('role.index')}}">
+                            <i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.role')
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#">
+                            <i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.permission') 
+                            <i class="fa fa-angle-left pull-right"></i>
+                        </a>
                         <ul class="treeview-menu">
-                            <li><a href="{{route('permission.index')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.permission')</a></li>
-                            <li><a href="{{route('p_component.index')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.permission_component')</a></li>
-
+                            <li>
+                                <a href="{{route('permission.index')}}">
+                                    <i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.permission')
+                                </a>
+                                </li>
+                            <li>
+                                <a href="{{route('p_component.index')}}">
+                                    <i class="fa fa-circle-o"></i> @lang('sidebar.user-mgmt.permission_component')
+                                </a>
+                            </li>
                         </ul>
                         
                     </li>
                 </ul>
             </li>
+        @endcan
+        @can('category-access')
             <li class="treeview">
                 <a href="#">
-                <i class="fas fa-copyright"></i> <span>@lang('sidebar.cat-mng.title')</span>
-                <i class="fa fa-angle-left pull-right"></i>
+                    <i class="fas fa-copyright"></i> <span>@lang('sidebar.cat-mng.title')</span>
+                    <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{route('category.index')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.cat-mng.catg-list')</a></li>
-                    
-                    <li><a href="{{route('category.create')}}"><i class="fa fa-circle-o"></i> @lang('sidebar.cat-mng.add-catg')</a></li>
+                    @can('category-view')
+                        <li>
+                            <a href="{{route('category.index')}}">
+                                <i class="fa fa-circle-o"></i> @lang('sidebar.cat-mng.catg-list')
+                            </a>
+                        </li>
+                    @endcan
+                    @can('category-add', Model::class)
+                        <li>
+                            <a href="{{route('category.create')}}">
+                                <i class="fa fa-circle-o"></i> @lang('sidebar.cat-mng.add-catg')
+                            </a>
+                        </li>
+                    @endcan
                 </ul>
             </li>
+        @endcan
+        @can('product-access')
             <li class="treeview">
                 <a href="#">
-                <i class="fas fa-file-powerpoint"></i> <span>Product Management</span>
+                <i class="fas fa-file-powerpoint"></i> <span>@lang('sidebar.product-mgmt.title')</span>
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
-                    <li><a href="{{route('product.index')}}"><i class="fa fa-circle-o"></i> List Product</a></li>
+                    <li><a href="{{route('product.index')}}"><i class="fa fa-circle-o"></i>@lang('sidebar.product-mgmt.product-list')</a></li>
                     
-                    <li><a href="{{route('product.create')}}"><i class="fa fa-circle-o"></i>Add New Product</a></li>
+                    <li><a href="{{route('product.create')}}"><i class="fa fa-circle-o"></i>@lang('sidebar.product-mgmt.add-product')</a></li>
                 </ul>
             </li>     
         @endcan

@@ -15,7 +15,7 @@ class CreatePermissionsTable extends Migration
     {
         Schema::create('permissions', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('permission');
+            $table->string('permission')->unique();
             $table->integer('p_component_id')->unsigned();
             $table->softDeletes();
             $table->timestamps();

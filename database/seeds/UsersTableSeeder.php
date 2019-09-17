@@ -12,8 +12,9 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
+        User::truncate();
         $items = [
-            ['name'=>'admin', 'email' => 'admin@admin.com', 'password' => 'hello123']
+            ['name'=>'admin', 'email' => 'admin@admin.com', 'password' => bcrypt('hello123'), 'role_id' => 1]
         ];
 
         foreach($items as $item){

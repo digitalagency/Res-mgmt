@@ -33,10 +33,11 @@ class CategoryController extends Controller
      */
     public function create()
     {
-       if (!Gate::allows('category-add')) {
+        if (!Gate::allows('category-add')) {
             return abort(401);
         }
-        return view('admin.category.create');
+        $parentCategories = Category::where('parent_id', null)->get();
+        return view('admin.category.create')->with('parentCategories', $parentCategories);
     }
 
     /**
@@ -47,7 +48,7 @@ class CategoryController extends Controller
      */
     public function store(Request $request)
     {
-        if (!Gate::allows('employee-add')) {
+        if (!Gate::allows('category-add')) {
             return abort(401);
         }
         $this->validate($request, [
@@ -55,28 +56,14 @@ class CategoryController extends Controller
         ]);
 
         Category::create([
-
             'name' => $request->name,
             'slug' =>str_slug($request->name),
             'parent_id' => $request->parent_id,
-
         ]);
         Session::flash('success', "Category Created Successfully");
         return redirect()->route('category.index');
 
     }
-
-    /**
-     * Display the specified resource.
-     *
-     * @param  int  $id
-     * @return \Illuminate\Http\Response
-     */
-    public function show($id)
-    {
-        //
-    }
-
     /**
      * Show the form for editing the specified resource.
      *
@@ -88,7 +75,9 @@ class CategoryController extends Controller
         if (!Gate::allows('category-edit')) {
             return abort(401);
         }
-        return view('admin.category.edit')->with('category',Category::find($id));
+        $parentCategories = Category::where('parent_id', null)->get();
+        return view('admin.category.edit')->with('category', Category::find($id))
+                                            ->with('parentCategories', $parentCategories);
     }
 
     /**
@@ -103,7 +92,9 @@ class CategoryController extends Controller
         if (!Gate::allows('category-edit')) {
             return abort(401);
         }
-        // dd($request->all());
+        $this->validate($request, [
+            'name' => 'required',
+        ]);
         Category::find($id)->update($request->all());
 
         Session::flash('success', 'Category changed');
@@ -125,5 +116,18 @@ class CategoryController extends Controller
         Category::find($id)->delete();
         return redirect()->back();
         
+    }
+    /**
+     * Displaying the different products under the category with its price
+     * 
+     * @param string $slug
+     */
+    public function single($slug){
+        if(!Gate::allows('category-single')){
+            return abort(401);
+        }
+        $category = Category::where('slug', $slug)->firstOrFail();
+        return view('admin.category.single')->with('category', $category)
+                                            ->with('products', $category->products);
     }
 }

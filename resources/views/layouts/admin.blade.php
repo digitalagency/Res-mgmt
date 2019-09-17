@@ -17,21 +17,14 @@
         <div class="content-wrapper">
             <!-- Content Header (Page header) -->
             <section class="content-header">
-            <h1>
-                @yield('page-title')
-                <small>@yield('page-sub-title')</small>
-            </h1>
-            <ol class="breadcrumb">
-                <li><a href="#"><i class="fa fa-dashboard"></i> Home</a></li>
-                <li class="active">Dashboard</li>
-            </ol>
+                <h1>
+                    @yield('page-title')
+                </h1>
             </section>
-            {{ Breadcrumbs::render() }}
-
-
-            <!-- Main content  starts here-->
+             <!-- Main content  starts here-->
             <section class="content">
                 <div class="container-fluid">
+                    {{ Breadcrumbs::render() }}
                     @yield('content')
                 </div>
             </section><!-- Main Content Ends Here -->

@@ -14,6 +14,8 @@
     <link href="{{asset('admin/css/skins/_all-skins.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- iCheck -->
     <link href="{{asset('admin/plugins/iCheck/flat/blue.css')}}" rel="stylesheet" type="text/css" />
+    <!--Magnific-Popup-->
+    <link href="{{asset('admin/css/magnific-popup.css')}}" rel="stylesheet" type="text/css" />
     <!-- Morris chart -->
     <link href="{{asset('admin/plugins/morris/morris.css')}}" rel="stylesheet" type="text/css" />
     <!-- jvectormap -->

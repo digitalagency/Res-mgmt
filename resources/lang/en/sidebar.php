@@ -17,5 +17,9 @@ return [
         'catg-list' => 'All Categories',
         'add-catg' => 'Add New Category',
     ],
-    
+    'product-mgmt' => [
+        'title' => 'Product Management',
+        'product-list' => 'All Products',
+        'add-product' => 'Add New Product'
+    ],
 ];

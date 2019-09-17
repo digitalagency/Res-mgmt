@@ -13,11 +13,60 @@ class ImageController extends Controller
     private $folder = '/uploads/products/';
     private $productImagePath = "http://127.0.0.1:8000/uploads/products/";
 
-    public function saveImage($images, $productId, $featuredImage){
+    /**
+     * Makes new Image Featured 
+     * 
+     * @param string $image
+     * 
+     * @return boolean true
+     */
+    private function makeImageFeatured($image)
+    {
+        $featuredImage = ImageManager::imagefind('image', $image)->first();
+        $featuredImage->featured = 1;
+        $featuredImage->save();
+        return $image;
+    }
+
+
+    /**
+     * Remove the featured image and create a new image featured
+
+     * @param string $imageName
+     * @param int $productId
+     * 
+     * @return response $image
+     */
+    public function featuredImage($imageName, $productId)
+    {
+        $image = ImageManager::where('product_id', $productId)->where('featured', 1)->first();
+        if ($image) {
+            $image->featured = 0;
+            $image->save();
+            $response = $this->makeImageFeatured($imageName);
+            return $response;
+        } else {
+            $response = $this->makeImageFeatured($imageName);
+            return $response;
+        }
+    }
+
+    /**
+     * Save image into the server in $folder path
+     * 
+     * @param array $images
+     * @param int $productId
+     * @param string $featuredImage
+     * 
+     * @return json $ajaxResponse
+     */
+    public function saveImage($images, $productId, $featuredImage)
+    {
+        $pId = strlen((string)$productId);
+        $imageFirstChar = (int)substr($featuredImage, 0, $pId);
 
         //get file details indivdually using loop
         foreach ($images as $file) {
-
             //get file name and prefix if with an id and generate path for the image
             //get all the details of the file
             $imageName = $file->getClientOriginalName();
@@ -35,13 +84,23 @@ class ImageController extends Controller
                 'product_id' => $productId
             ]);
 
-            $imageExists = ImageManager::where('image', $productId.$featuredImage)->first();
-            // dd($imageExists);
-            if($imageExists){
-                $imageExists->featured = 1;
-                $imageExists->save();
+            if($imageName == $featuredImage){
+                $pClass = 'featured-image';
+            }else{
+                $pClass = '';
             }
             
+            if($productId != $imageFirstChar){
+                $imageExists = ImageManager::imagefind('image', $productId . $featuredImage)->first();
+                if ($imageExists) {
+                    $this->featuredImage($imageExists->getOriginal('image'), $productId);
+                }
+            }else{
+                $imageExists = ImageManager::imagefind('image', $featuredImage)->first();
+                if ($imageExists) {
+                    $this->featuredImage($imageExists->getOriginal('image'), $productId);
+                }
+            }
 
             //prepare json response for the request
             $ajaxResponse = [
@@ -54,24 +113,28 @@ class ImageController extends Controller
                         'thumbnailUrl' => Croppa::url($url, 80, 80, ['resize']),
                         'type' => $fileMimeType,
                         'url' => $url,
-                        'featured' => $featuredImage
+                        'featured' => $featuredImage,
+                        'featureclass'  => $pClass,
                     ]
                 ]
             ];
         }
         return response()->json($ajaxResponse);
     }
-    
 
-    //fetch all images associated with that product
+
+    /**
+     * Fetch all images associated with that product
+     * and return array containing all images
+     */
     public function getAllRelatedImages($id){
         $icount = 0;
-        $images = ImageManager::where('product_id', $id)->get();
+        $images = ImageManager::imagefind('product_id', $id)->get();
         $imageArray = [];
         foreach ($images as $image) {
             $getImageName = explode("/",$image->image);
             $imageName = end($getImageName);
-            $url = $image->image;
+            $url = $this->folder. $imageName;
             $imageArray[$icount]['url'] = $url;
             $imageArray[$icount]['name'] = $imageName;
             $imageArray[$icount]['imageId'] = $image->id;
@@ -79,15 +142,22 @@ class ImageController extends Controller
             $imageArray[$icount]['thumbnailUrl'] = Croppa::url($url, 80, 80, ['resize']);
             $imageArray[$icount]['deleteType'] =   'DELETE';
             $imageArray[$icount]['deleteUrl'] =   route('product.image.destroy', $image->id);
+            if($image->featured == 1){
+                $imageArray[$icount]['featured'] = $imageName;
+            }
             $icount++;
         }
         return $imageArray;
     }
 
-
-    //delete image
-    public function destroy($id){
-        $deleteId = ImageManager::find($id)->delete();
+    /**
+     * Delete the specified resource
+     * 
+     * @param int $id
+     */
+    public function destroy($id)
+    {
+        $deleteId = ImageManager::imagefind('id', $id)->delete();
         if($deleteId){
             return 1;
         }
@@ -98,8 +168,9 @@ class ImageController extends Controller
 
     /*
      * convert filesize to kb/mb
+     * 
      */
-    public function fileSizeFormatted($path)
+    private function fileSizeFormatted($path)
     {
         $size = filesize($path);
         $units = array('B', 'KB', 'MB', 'GB', 'TB', 'PB', 'EB', 'ZB', 'YB');

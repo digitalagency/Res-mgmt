@@ -8,16 +8,9 @@
     <!-- Bootstrap 3.3.2 JS -->
     <script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>    
     
-    <!-- daterangepicker -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.10.2/moment.min.js" type="text/javascript"></script>
-    <script src="{{asset('admin/plugins/daterangepicker/daterangepicker.js')}}" type="text/javascript"></script>
-    <!-- datepicker -->
-    <script src="{{asset('admin/plugins/datepicker/bootstrap-datepicker.js')}}" type="text/javascript"></script>
-    <!-- Slimscroll -->
-    <script src="{{asset('admin/plugins/slimScroll/jquery.slimscroll.min.js')}}" type="text/javascript"></script>
-
-    <!-- FastClick -->
-    <script src="{{asset('admin/plugins/fastclick/fastclick.min.js')}}"></script>
+    <!--Magnific-Popup JS-->
+    <script src="{{asset('admin/plugins/magnific-popup/magnific-popup.min.js')}}" type="text/javascript"></script>
+    <!--Bootstrap wysihtml5 text editor-->
     <script src="{{asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.all.min.js')}}" type="text/javascript"></script>
     <!-- DATA TABES SCRIPT -->
     
@@ -37,8 +30,6 @@
     <script src="https://blueimp.github.io/JavaScript-Templates/js/tmpl.min.js"></script>
     <!-- The Load Image plugin is included for the preview images and image resizing functionality -->
     <script src="https://blueimp.github.io/JavaScript-Load-Image/js/load-image.all.min.js"></script>
-    <!-- The Canvas to Blob plugin is included for image resizing functionality -->
-    <script src="https://blueimp.github.io/JavaScript-Canvas-to-Blob/js/canvas-to-blob.min.js"></script>
     <!-- Bootstrap JS is not required, but included for the responsive demo navigation -->
     
     <!-- blueimp Gallery script -->

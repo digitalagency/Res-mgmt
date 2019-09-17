@@ -11,21 +11,13 @@ class Product extends Model
 {
 
 	protected $fillable = [
-
 		'name', 'price', 'description', 'slug', 'category_id','status','featured','image',
+		'meta_title', 'meta_keywords', 'meta_description'
 	];
 
-	//Change value while displying to admin using mutators
-	// public function getStatusAttribute($value){
-	// 	return $this->checkBoolean($value);
-	// }
-	// public function getFeaturedAttribute($value)
-	// {
-	// 	return $this->checkBoolean($value);
-	// } 
 	//Add a prefix to a price column data before displaying to a user
 	public function getPriceAttribute($value){
-		if(Gate::allows('prodict-view')){
+		if(Gate::allows('product-view')){
 			return 'Rs. ' . $value;
 		}
 		else{
@@ -33,18 +25,38 @@ class Product extends Model
 		}
 	}
 
-    public function category(){
+	public function setSlugAttribute($value){
+		$this->attributes['slug'] = str_slug($value);
+	}
 
+	/**
+	 * Maping one-to-many realtionship between Category and Product
+	 */
+    public function category(){
     	return $this->belongsTo(Category::class);
 	}
+
+	/**
+	 * Maping one-to-many relationship between Product and Images
+	 */
 	public function images(){
 		return $this->hasMany(ImageManager::class);
 	}
-	private function checkBoolean($value){
-		if ($value == true) {
-			return "Yes";
-		} else {
-			return "No";
-		}
+
+	/**
+	 * Maping one-to-one relationship between Product and Featured Image
+	 */
+	public function featuredImage(){
+		$imageDetails =  $this->hasOne(ImageManager::class)->where('featured', 1)->first();
+		return $imageDetails;
+		// $imageName = $imageDetails->getOriginal('image');
+		// return $imageName;
 	}
+
+	public function scopeSingleProduct($query, $attribute, $value)
+	{
+		return $query->where($attribute, $value)->first();
+	}
+
+
 }

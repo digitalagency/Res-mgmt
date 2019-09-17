@@ -106,10 +106,13 @@ Breadcrumbs::for('p_component.edit', function ($trail, $id) {
     $trail->push($p_component->component, route('p_component.edit', $p_component->component));
 });
 
+/**
+ * Category Breadcrumbs
+ */
 // Home / Category / Create
 Breadcrumbs::for('category.create', function ($trail) {
     $trail->parent('home');
-    $trail->push('Category', route('category.create'));
+    $trail->push('Create Category', route('category.create'));
 });
 
 
@@ -126,27 +129,40 @@ Breadcrumbs::for('category.edit', function ($trail, $id) {
     $trail->push($category->name, route('category.edit', $category->name));
 });
 
-// Home / Category / Create
-Breadcrumbs::for('product.create', function ($trail) {
-    $trail->parent('home');
-    $trail->push('Product', route('product.create'));
+
+// Home/ Category / [Category Name]
+Breadcrumbs::for('category.single', function ($trail, $slug) {
+    $category = Category::where('slug', $slug)->first();
+    $trail->parent('category.index');
+    $trail->push($category->name, route('category.single', $category->name));
 });
 
+/**
+ * Product Breadcrumbs
+ */
 // Home / Product /
 Breadcrumbs::for('product.index', function ($trail) {
     $trail->parent('home');
     $trail->push('Product', route('product.index'));
 });
 
-// Home/ Product / edit
+// Home / Product / Create
+Breadcrumbs::for('product.create', function ($trail) {
+    $trail->parent('product.index');
+    $trail->push('Create Product', route('product.create'));
+});
+
+// Home/ Product / [ProductName]
 Breadcrumbs::for('product.edit', function ($trail, $id) {
     $product = Product::find($id);
     $trail->parent('product.index');
     $trail->push($product->name, route('product.edit', $product->name));
 });
 
-// Home / Product /
-Breadcrumbs::for('image', function ($trail) {
-    $trail->parent('home');
-    $trail->push('Product', route('image'));
+
+// Home/ Product / [ProductName]
+Breadcrumbs::for('product.single', function ($trail, $slug) {
+    $product = Product::where('slug', $slug)->first();
+    $trail->parent('product.index');
+    $trail->push($product->name, route('product.single', $product->name));
 });

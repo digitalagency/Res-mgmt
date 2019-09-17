@@ -13,12 +13,19 @@ class Category extends Model
 		'name', 
 		'slug',
 		'parent_id'
-
 	];
 
     public function products(){
 
     	return $this->hasMany(Product::class);
 
-    }
+	}
+	public function getNameAttribute($value)
+	{
+		return ucwords($value);
+	}
+	public function getCreatedAtAttribute($value)
+	{
+		return \Carbon\Carbon::parse($value)->format('j M, Y');
+	}
 }
