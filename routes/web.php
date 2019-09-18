@@ -1,5 +1,7 @@
 <?php
-
+use App\Models\Admin\FindReservation;
+use App\Models\Admin\Header;
+use App\Models\Admin\Schedule;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -15,7 +17,12 @@ Route::get('locale/{locale}', function ($locale) {
     return redirect()->back();
 });
 Route::get('/', function () {
-    return view('welcome');
+    $contacts = FindReservation::select()->first();
+    $contact = Header::select()->first();
+    $schedules = Schedule::select()->first();
+    return view('frontend.index')->with('contacts',$contacts)
+                                    ->with('contact',$contact)
+                                    ->with('schedules', $schedules);
 });
 
 Auth::routes();
@@ -28,10 +35,14 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('p_component', 'Admin\PermissionForsController');
     //Permissions Routes
     Route::get('permission/trashed', 'Admin\PermissionsController@trashed')->name('permission.trashed');
+
     Route::get('permission/restore/{id}', 'Admin\PermissionsController@restoreTrashed')->name('permission.restore');
+
     Route::get('permission/kill/{id}', 'Admin\PermissionsController@killTrashed')->name('permission.kill');
+
     Route::resource('permission', 'Admin\PermissionsController');
 
+    Route::get('employee/description/{id}', 'Admin\UsersController@description')->name('employee.description');
 
     Route::resource('employee', 'Admin\UsersController');
 
@@ -47,4 +58,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
 
     Route::resource('footerSchedule', 'Admin\FooterScheduleController');
 
+    Route::get('message/trashed', 'Admin\MessageController@trashed')->name('message.trashed');
+
+    Route::get('message/restore/{id}', 'Admin\MessageController@restoreTrashed')->name('message.restore');
+
+    Route::get('message/kill/{id}', 'Admin\MessageController@killTrashed')->name('message.kill');
+
+    Route::resource('message','Admin\MessageController');
+
+    
+
+    
+
 });
+Route::resource('contact', 'Frontend\ContactController');
+
+Route::resource('gallery','Frontend\GalleryController');
+
+Route::resource('menu','Frontend\MenuController');
+
+Route::resource('homeFront','Frontend\FrontHomeController');
+

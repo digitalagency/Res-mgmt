@@ -22,6 +22,7 @@ $(document).ready(function () {
             visible: false
         }]
     });
+
     $("input[type='search']").addClass('form-control');
     $("input[type='search']").css({"font-weight": "500", 'width':'250px', 'padding-left': '10px'});
 
@@ -43,15 +44,40 @@ $(document).ready(function () {
           $(".increment").after(html);
       });
 
-      $("body").on("click",".btn-danger",function(){ 
+    $("body").on("click",".btn-danger",function(){ 
           $(this).parents(".control-group").remove();
       });
 
-       $('#timeRange .time').timepicker({
+
+    $('.readMore').click(function(){
+          elem = $(this);
+          readMore(elem);
+        });
+
+    $('#timeRange .time').timepicker({
         'showDuration': true,
         'timeFormat': 'g:ia'
     });
+    
       var basicExampleEl = document.getElementById('timeRange');
       var datepair = new Datepair(basicExampleEl);
 });
-
+/**
+ * 
+ * Displying certain content of the whole document and toggle show all and show less
+ * 
+ */
+function readMore(elem) {
+    var dots = elem.parent().find('.dots');
+    var moreText = elem.parent().find('.more');
+    var btnText = elem.parent().find('.readMore');
+    if (dots.css('display') == "none") {
+        dots.css('display', 'inline');
+        btnText.html("Read More");
+        moreText.css('display', 'none');
+    } else {
+        dots.css('display','none');
+        btnText.html("Read less");
+        moreText.css('display', 'inline');
+    }
+}

@@ -1,5 +1,8 @@
 
-<?php include('includes/header.php');?>
+@extends('layouts.app')
+
+@section('content')
+
     <div id="content" class="site-content">
       <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
@@ -20,7 +23,7 @@
                 </div>
                 <div class="sm-span1 smue-clmn  sme-dsbl-margin-left sme-dsbl-margin-right  smue-empty sm-hidden-phone"> </div>
                 <div class="sm-span6 smue-clmn  sme-dsbl-margin-left sme-dsbl-margin-right introduce_img full_col wow fadeInUp delay_04s" style="visibility: hidden; animation-name: none;">
-                  <div class="smue-image-obj smue-text-align-left"><img src="assets/images/about-image.jpg" class="smue-image-obj-basic sme-dsbl-margin-left sme-dsbl-margin-right sme-dsbl-margin-top sme-dsbl-margin-bottom"></div>
+                  <div class="smue-image-obj smue-text-align-left"><img src="{{asset('frontend/assets/images/about-image.jpg')}}" class="smue-image-obj-basic sme-dsbl-margin-left sme-dsbl-margin-right sme-dsbl-margin-top sme-dsbl-margin-bottom"></div>
                 </div>
               </div>
               <div class="sm-row-fluid smue-row sme-dsbl-margin-left sme-dsbl-margin-right chefs_row">
@@ -38,7 +41,7 @@
                       <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb">
                         <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                           <div class="smue-service-box-icon-holder" style=" font-size: 550px;">
-                            <div style="background-image: url(&#39;assets/images/team-image1.jpg&#39;);"></div>
+                            <div style="background-image: url(&#39;{{asset('frontend/assets/images/team-image1.jpg')}}&#39;);"></div>
                           </div>
                         </div>
                         <div class="smue-service-box-data-section">
@@ -72,7 +75,7 @@
                       <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb">
                         <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                           <div class="smue-service-box-icon-holder" style=" font-size: 550px;">
-                            <div style="background-image: url(&#39;assets/images/team-image2.jpg&#39;);"></div>
+                            <div style="background-image: url(&#39;{{asset('frontend/assets/images/team-image2.jpg')}}&#39;);"></div>
                           </div>
                         </div>
                         <div class="smue-service-box-data-section">
@@ -106,7 +109,7 @@
                       <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb">
                         <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                           <div class="smue-service-box-icon-holder" style=" font-size: 550px;">
-                            <div style="background-image: url(&#39;assets/images/team-image3.jpg&#39;);"></div>
+                            <div style="background-image: url(&#39;{{asset('frontend/assets/images/team-image3.jpg')}}&#39;);"></div>
                           </div>
                         </div>
                         <div class="smue-service-box-data-section">
@@ -148,7 +151,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image1.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image1.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -167,7 +170,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image2.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image2.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -186,7 +189,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image3.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image3.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -205,7 +208,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image4.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image4.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -224,7 +227,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image5.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image5.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -243,7 +246,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image6.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image6.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -259,7 +262,7 @@
                   </div>
                 </div>
               </div>
-              <div class="sm-row-fluid smue-row smue-row-image sme-dsbl-margin-left sme-dsbl-margin-right testimonials_row wow fadeInUp delay_2s" style="background-image: url(&quot;assets/images/testimonial-bg.jpg&quot;); visibility: hidden; animation-name: none;">
+              <div class="sm-row-fluid smue-row smue-row-image sme-dsbl-margin-left sme-dsbl-margin-right testimonials_row wow fadeInUp delay_2s" style="background-image: url(&quot;{{asset('frontend/assets/images/testimonial-bg.jpg')}}&quot;); visibility: hidden; animation-name: none;">
                 <div class="sm-span12 smue-clmn  sme-dsbl-margin-left sme-dsbl-margin-right testimonial_col">
                   <div class="smue-text-obj emergency_content">
                     <p style="text-align: center;"><span style="color: #ffffff;">TESTIMONIALS</span></p>
@@ -270,7 +273,7 @@
               </div>
               <div class="sm-row-fluid smue-row sme-dsbl-margin-left sme-dsbl-margin-right welcome_row padding_row">
                 <div class="sm-span6 smue-clmn  sme-dsbl-margin-left sme-dsbl-margin-right welcome_row padding_row wow fadeInUp delay_16s" style="visibility: hidden; animation-name: none;">
-                  <div class="smue-image-obj smue-text-align-left"><img src="assets/images/last_img.jpg" class="smue-image-obj-basic sme-dsbl-margin-left sme-dsbl-margin-right sme-dsbl-margin-top sme-dsbl-margin-bottom"></div>
+                  <div class="smue-image-obj smue-text-align-left"><img src="{{asset('frontend/assets/images/last_img.jpg')}}" class="smue-image-obj-basic sme-dsbl-margin-left sme-dsbl-margin-right sme-dsbl-margin-top sme-dsbl-margin-bottom"></div>
                 </div>
                 <div class="sm-span6 smue-clmn  sme-dsbl-margin-left sme-dsbl-margin-right">
                   <div class="sm-row-fluid smue-row sme-dsbl-margin-left sme-dsbl-margin-right">
@@ -289,7 +292,7 @@
                     <div class="sm-span12 smue-clmn sme-dsbl-margin-left sme-dsbl-margin-right welcome_chef wow fadeInUp delay_26s" style="visibility: hidden; animation-name: none;">
                       <div class="smue-service-box-obj smue-service-box-centered smue-service-box-basic">
                         <div class="smue-service-box-icon-section smue-service-box-small-icon" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
-                          <div class="smue-service-box-icon-holder smue-service-box-icon-holder-circle" style=" font-size: 100px; background-color: #000000; min-height: 1.000000em; height: 1.000000em; min-width: 1.000000em; width: 1.000000em;"><img src="assets/images/cook-welcome.jpg"></div>
+                          <div class="smue-service-box-icon-holder smue-service-box-icon-holder-circle" style=" font-size: 100px; background-color: #000000; min-height: 1.000000em; height: 1.000000em; min-width: 1.000000em; width: 1.000000em;"><img src="{{asset('frontend/assets/images/cook-welcome.jpg')}}"></div>
                         </div>
                         <div class="smue-service-box-heading-section">
                           <h4 style=" color: ;">Henry Jecob</h4>
@@ -315,4 +318,4 @@
       
     </div>
     <!-- .site-content -->
-<?php include('includes/footer.php');?>
+@endsection

@@ -1,5 +1,6 @@
-<?php include('includes/header-inner.php');?>
+@extends('layouts.inner')
 
+@section('content')
 <div id="content" class="site-content">
       <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
@@ -18,7 +19,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image1.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image1.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -37,7 +38,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image2.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image2.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -56,7 +57,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image3.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image3.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -75,7 +76,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image4.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image4.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -94,7 +95,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image5.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image5.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -113,7 +114,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image6.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image6.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -132,7 +133,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image5.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image5.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -151,7 +152,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image1.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image1.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -170,7 +171,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image2.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image2.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -189,7 +190,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image3.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image3.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -208,7 +209,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image6.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image6.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -227,7 +228,7 @@
                   <div class="smue-service-box-obj smue-service-box-centered smue-service-box-icon-effect-zoom smue-service-box-basic class_thumb02">
                     <div class="smue-service-box-icon-section smue-service-box-big-image" style=" padding-left: 0px; padding-right: 0px; padding-top: 0px; padding-bottom: 0px;">
                       <div class="smue-service-box-icon-holder" style=" font-size: 300px;">
-                        <div style="background-image: url(&#39;assets/images/menu-image4.jpg&#39;);"></div>
+                        <div style="background-image: url(&#39;{{asset('frontend/assets/images/menu-image4.jpg')}}&#39;);"></div>
                       </div>
                     </div>
                     <div class="smue-service-box-data-section">
@@ -256,4 +257,4 @@
       
     </div>
 <!-- .site -->
-<?php include('includes/footer.php');?>
+@endsection

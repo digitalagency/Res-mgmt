@@ -22,6 +22,14 @@ return [
             'name' => 'Name',
             'email' => 'Email',
             'password' => 'Password',
+            'description' => 'Description',
+            'address' => 'Address',
+            'facebook' => 'Facebook',
+            'instagram' => 'Instagram',
+            'twitter' => 'Twitter',
+            'image' => 'Image', 
+            'oldImage' => 'Existing Picture',
+            'newImage' => 'Change Picture',
         ]
     ],
     'category' => [
@@ -29,6 +37,13 @@ return [
         'field' => [
             'name' => 'Name',
         ]
+    ],
+    'message' => [
+        'name' => 'Name',
+        'email' => 'Email',
+        'contact' => 'Contact',
+        'message' => 'Message',
+        'budget' => 'Budget Level',
     ],
     'header' => [
         'title' => 'Header Content',
@@ -69,6 +84,7 @@ return [
 
     'app_id' => '#',
     'app_action' => 'Action',
+    'app_received_at' => 'Received At',
     'app_created_at' => 'Created At',
     'app_deleted_at' => 'Deleted At',
     'app_create' => 'Create New',

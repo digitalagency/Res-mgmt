@@ -4,7 +4,6 @@
 @section('page-title', 'Header Contents')
 
 @section('content')
-
 	<div class="box">
 		<div class="box-header">
 			<h3 class="box-title">
@@ -13,7 +12,6 @@
 
 			<a href="{{route('profileHeader.create')}}" class="btn btn-success pull-right">@lang('global.app_new')</a>
 		</div>
-
 
 		<div class="box-body">
 			<table class="table table-bordered table-striped table-hover">

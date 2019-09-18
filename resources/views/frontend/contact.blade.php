@@ -1,4 +1,6 @@
-<?php include('includes/header-inner.php');?>
+@extends('layouts.inner')
+
+@section('content')
 
 <div id="content" class="site-content">
   <div id="primary" class="content-area">
@@ -15,7 +17,8 @@
                   <h5 style=" color: ;">ADDRESS</h5>
                 </div>
                 <div class="smue-service-box-content-section">
-                  <p>121, Hayden Street, Sydney, New South Wales, Australia</p>
+                  <!-- <p>121, Hayden Street, Sydney, New South Wales, Australia</p> -->
+                  <p>{{$contacts->address}}</p>
                 </div>
               </div>
             </div>
@@ -28,7 +31,7 @@
                   <h5 style=" color: ;">EMAIL</h5>
                 </div>
                 <div class="smue-service-box-content-section">
-                  <p>info@domainname.com support@domainname.com</p>
+                  <p>{{$contacts->email}}</p>
                 </div>
               </div>
             </div>
@@ -41,8 +44,8 @@
                   <h5 style=" color: ;">PHONE NO</h5>
                 </div>
                 <div class="smue-service-box-content-section">
-                  <p style="text-align: center;">+0987654321</p>
-                  <p style="text-align: center;">+089 (322-555-696)</p>
+                  <p style="text-align: center;">{{$contact->contact}}1</p>
+                  
                 </div>
               </div>
             </div>
@@ -58,18 +61,22 @@
               </div>
               <div class="sm-row-fluid smue-row sme-dsbl-margin-left sme-dsbl-margin-right">
                 <div class="sm-span8 smue-clmn sme-dsbl-margin-left sme-dsbl-margin-right">
-                  <form role="form" class="mpce-cfa-form  contact_form smue-form-53" method="post" enctype="multipart/form-data">
+                  <form action="{{route('contact.store')}}" role="form" class="mpce-cfa-form  contact_form smue-form-53" method="POST" enctype="multipart/form-data">
+
+                    @csrf
+                    @method('POST')
+
                     <p class="mpce-cfa-form-group mpce-cfa-form-text">
-                      <input type="text" name="FullName" id="name" class="cfa-input" placeholder="Full Name">
+                      <input type="text" name="fullName" id="fullName" class="cfa-input" placeholder="Full Name">
                     </p>
                     <p class="mpce-cfa-form-group mpce-cfa-form-email">
-                      <input type="email" name="YourEmail" id="email" class="cfa-mail" placeholder="Your Email">
+                      <input type="email" name="email" id="email" class="cfa-mail" placeholder="Your Email">
                     </p>
                     <p class="mpce-cfa-form-group mpce-cfa-form-tel">
-                      <input type="tel" name="YourPhone" id="YourPhone" class="cfa-tel" placeholder="Your Phone" pattern="^[+]?[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$">
+                      <input type="tel" name="contact" id="contact" class="cfa-tel" placeholder="Your Phone" pattern="^[+]?[(]{0,1}[0-9]{1,3}[)]{0,1}[-\s\./0-9]*$">
                     </p>
                     <p class="mpce-cfa-form-group mpce-cfa-form-select">
-                      <select name="BudgetLevel" id="BudgetLevel" class="cfa-select class=" cfa-select="" required"="" required="true">
+                      <select name="budgetLevel" id="budgetLevel" class="cfa-select class=" cfa-select="" required="" required="true">
                       <option disabled="" selected="selected" value="">Budget Level</option>
                       <option value="$500 to $1,000">$500 to $1,000</option>
                       <option value="$1,000 to $2,200">$1,000 to $2,200</option>
@@ -80,7 +87,7 @@
                       </select>
                     </p>
                     <p class="mpce-cfa-form-group mpce-cfa-form-textarea">
-                      <textarea name="Message" id="message" class="cfa-textarea" placeholder="Message" rows="6"></textarea>
+                      <textarea name="message" id="message" class="cfa-textarea" placeholder="Message" rows="6"></textarea>
                     </p>
                     <div class="mpce-cfa-message"></div>
                     <p>
@@ -88,7 +95,7 @@
                       <input type="hidden" name="cfa_id" value="">
                     </p>
                     <p class="smue-button-obj mpce-cfa-form-group mpce-cfa-form-submit">
-                      <input type="submit" name="cfa-submit" class="cfa-submit  smue-btn-size- form-submit" value="Send Message">
+                      <input type="submit" name="cfa-submit" class="btn btn-success cfa-submit  smue-btn-size- form-submit" value="Send Message">
                       <img src="./Contact – Eatery_files/loader.gif" class="mpce-cfa-loader"></p>
                   </form>
                 </div>
@@ -252,4 +259,4 @@
 </div>
 <!-- .site-content --> 
 <!-- .site -->
-<?php include('includes/footer.php');?>
+@endsection

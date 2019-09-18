@@ -237,9 +237,8 @@
                 <div class="pull-right">
 
                 <form action="{{ route('logout') }}" method="POST" id="logout-form"> 
-                     <button class="btn btn-default btn-flat">{{__('Logout')}}</buton>
-
-                @csrf
+                    <button class="btn btn-default btn-flat">{{__('Logout')}}</buton>
+                        @csrf
 
                 </form>
                

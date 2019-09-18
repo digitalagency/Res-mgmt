@@ -87,6 +87,12 @@ Breadcrumbs::for('permission.edit', function ($trail, $id) {
     $trail->push($permission->permission, route('permission.edit', $permission->permission));
 });
 
+// Home / Permissions / Trashed Information
+Breadcrumbs::for('permission.trashed', function ($trail) {
+    $trail->parent('permission.index');
+    $trail->push('Create Permission', route('permission.trashed'));
+});
+
 /*
 *   Permission Component Breadcrumb
 */
@@ -200,4 +206,16 @@ Breadcrumbs::for('footerMedia.edit', function ($trail, $id) {
     $media = SocialMediaLinks::find($id);
     $trail->parent('footerFind.index');
     $trail->push($media->facebook, route('footerSchedule.edit', $media->facebook));
+});
+
+// Home / Message /
+Breadcrumbs::for('message.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Message', route('message.index'));
+});
+
+// Home / Trashed Message /
+Breadcrumbs::for('message.trashed', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Trashed Message', route('message.trashed'));
 });

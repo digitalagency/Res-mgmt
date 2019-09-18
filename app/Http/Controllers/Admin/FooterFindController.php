@@ -73,7 +73,8 @@ class FooterFindController extends Controller
         Session::flash('success', "Footer Content Created Successfully");
         return redirect()->route('footerFind.index');
         }
-        else{
+        else
+        {
             return abort(401);
         }
 

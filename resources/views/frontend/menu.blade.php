@@ -1,5 +1,6 @@
-<?php include('includes/header-inner.php');?>
+@extends('layouts.inner')
 
+@section('content')
 <div id="content" class="site-content">
       <div id="primary" class="content-area">
         <main id="main" class="site-main" role="main">
@@ -223,4 +224,4 @@
       
     </div>
 <!-- .site -->
-<?php include('includes/footer.php');?>
+@endsection
