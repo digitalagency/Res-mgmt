@@ -129,9 +129,7 @@
             <li><a href="pages/examples/500.html"><i class="fa fa-circle-o"></i> 500 Error</a></li>
             <li><a href="pages/examples/blank.html"><i class="fa fa-circle-o"></i> Blank Page</a></li>
         </ul>
-<<<<<<< HEAD
         </li> -->
-=======
         </li>
         @can('table-access')
             <li class="treeview">
@@ -145,7 +143,6 @@
                 </ul>
             </li>
         @endcan
->>>>>>> logout
         @can('user-access')
             <li class="treeview">
                 <a href="#">

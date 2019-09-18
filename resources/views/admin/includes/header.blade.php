@@ -235,21 +235,10 @@
                 <a href="#" class="btn btn-default btn-flat">Profile</a>
                 </div>
                 <div class="pull-right">
-<<<<<<< HEAD
-
-                <form action="{{ route('logout') }}" method="POST" id="logout-form"> 
-                     <button class="btn btn-default btn-flat">{{__('Logout')}}</buton>
-
-                @csrf
-
-                </form>
-               
-=======
                     <form id="logout-form" action="{{ route('logout') }}" method="POST" style="">
                         @csrf
                         <button class="btn btn-primary">{{__('Logout')}}</button>
                     </form>
->>>>>>> logout
                 </div>
 
                 

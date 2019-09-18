@@ -3,13 +3,10 @@ use App\User;
 use App\Models\Admin\Role;
 use App\Models\Admin\Permission;
 use App\Models\Admin\PermissionComponent;
-<<<<<<< HEAD
 use App\Models\Admin\Category;
 use App\Models\Admin\Product;
 
-=======
 use App\Models\Admin\Table;
->>>>>>> logout
 
 //Home Breadcrumb
 Breadcrumbs::for('home', function ($trail) {
@@ -110,7 +107,6 @@ Breadcrumbs::for('p_component.edit', function ($trail, $id) {
     $trail->push($p_component->component, route('p_component.edit', $p_component->component));
 });
 
-<<<<<<< HEAD
 /**
  * Category Breadcrumbs
  */
@@ -171,7 +167,6 @@ Breadcrumbs::for('product.single', function ($trail, $slug) {
     $trail->parent('product.index');
     $trail->push($product->name, route('product.single', $product->name));
 });
-=======
 /*
 *   Table Breadcrumb
 */
@@ -194,4 +189,3 @@ Breadcrumbs::for('table.edit', function ($trail, $id) {
     $trail->parent('table.index');
     $trail->push($table->table_no, route('table.edit', $table->table_no));
 });
->>>>>>> logout

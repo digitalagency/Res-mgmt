@@ -26,14 +26,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('role', 'Admin\RolesController');
 
     Route::resource('p_component', 'Admin\PermissionForsController');
-<<<<<<< HEAD
     /**
      * Permissions Routes
      */
-=======
-
-    //Permissions Routes
->>>>>>> logout
     Route::get('permission/trashed', 'Admin\PermissionsController@trashed')->name('permission.trashed');
     Route::get('permission/restore/{id}', 'Admin\PermissionsController@restoreTrashed')->name('permission.restore');
     Route::get('permission/kill/{id}', 'Admin\PermissionsController@killTrashed')->name('permission.kill');
