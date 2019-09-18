@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 
+@section('title', 'Edit Employee')
+@section('page-title', 'Employee')
+@section('page-sub-title','Edit')
 
 @section('content')
     <!--Edit Box Starts Here-->

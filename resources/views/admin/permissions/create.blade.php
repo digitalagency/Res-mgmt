@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 
+@section('title', 'Create Permission')
+@section('page-title', 'Permission')
+@section('page-sub-title','Create')
 
 @section('content')
     <!--Permission Create Box Starts Here-->

@@ -1,5 +1,8 @@
 @extends('layouts.admin')
 
+@section('title', 'Employee')
+@section('page-title', 'Employee')
+@section('page-sub-title','Create')
 
 @section('content')
     <!--Create User Box Starts Here-->

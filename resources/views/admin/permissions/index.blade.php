@@ -1,12 +1,20 @@
 @extends('layouts.admin')
+
+@section('title', 'Permissions')
+@section('page-title', 'Permissions')
+
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">@lang('global.permission.title')</h3>
-                    <a href="{{route('permission.create')}}" class="btn btn-success pull-right">@lang('global.app_new')</a>
-                    <a href="{{route('permission.trashed')}}" class="btn btn-danger pull-right">@lang('global.app_trashed')</a>
+                    @can('permission-add')
+                        <a href="{{route('permission.create')}}" class="btn btn-success pull-right">@lang('global.app_new')</a>
+                    @endcan
+                    @can('permission-delete')
+                        <a href="{{route('permission.trashed')}}" class="btn btn-danger pull-right">@lang('global.app_trashed')</a>
+                    @endcan
                 </div>
                 <div class="box-body">
                     <div class="row">

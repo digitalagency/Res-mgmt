@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title', 'Edit Role')
+@section('page-title', 'Role')
+@section('page-sub-title','Edit')
+
 @section('content')
     <!--Role Edit Box Starts Here-->
     <div class="box">

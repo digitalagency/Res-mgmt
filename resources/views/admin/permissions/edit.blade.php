@@ -1,5 +1,9 @@
 @extends('layouts.admin')
 
+@section('title', 'Edit Permission')
+@section('page-title', 'Permission')
+@section('page-sub-title','Edit')
+
 @section('content')
     <!--Permission Edit Box Starts Here-->
     <div class="box">

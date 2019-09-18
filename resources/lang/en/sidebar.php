@@ -11,6 +11,7 @@ return [
         'permission' => 'Permissions',
         'permission_component' => 'Permission Components'
     ],
+<<<<<<< HEAD
     'cat-mng' =>[
 
         'title' => 'Category Management',
@@ -22,4 +23,12 @@ return [
         'product-list' => 'All Products',
         'add-product' => 'Add New Product'
     ],
+=======
+    'table-mgmt' => [
+        'title' => 'Table Management',
+        'new_table' => 'Add Table',
+        'all_table' => 'All Tables'
+    ],
+    
+>>>>>>> logout
 ];

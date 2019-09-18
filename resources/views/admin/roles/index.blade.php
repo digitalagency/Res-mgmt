@@ -1,11 +1,17 @@
 @extends('layouts.admin')
+
+@section('title', 'Roles')
+@section('page-title', 'Roles')
+
 @section('content')
     <div class="row">
         <div class="col-xs-12">
             <div class="box">
                 <div class="box-header">
                     <h3 class="box-title">@lang('global.role.title')</h3>
-                    <a href="{{route('role.create')}}" class="btn btn-success pull-right">@lang('global.app_new')</a>
+                    @can('role-add')
+                        <a href="{{route('role.create')}}" class="btn btn-success pull-right">@lang('global.app_new')</a>
+                    @endcan
                 </div><!-- /.box-header -->
                 <div class="box-body">
                     <table id="dataList" class="table table-bordered table-hover">

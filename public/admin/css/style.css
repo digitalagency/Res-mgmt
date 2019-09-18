@@ -58,6 +58,7 @@ label{
     font-weight: 800;
     text-decoration: underline;
 }
+<<<<<<< HEAD
 .switch {
     position: relative;
     display: inline-block;
@@ -195,4 +196,17 @@ tr[data-href]{
 }
 .show-action-btns{
     display: flex;
+=======
+.breadcrumb{
+    margin: 20px 30px;
+}
+.main-header>.navbar{
+    margin-left: 300px;
+}
+.main-header .logo{
+    width: 300px;
+}
+.box-header a:last-child{
+    margin-right: 10px;
+>>>>>>> logout
 }

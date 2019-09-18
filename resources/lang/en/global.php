@@ -24,6 +24,7 @@ return [
             'password' => 'Password',
         ]
     ],
+<<<<<<< HEAD
     'category' => [
         'title' => 'Category',
         'dish_types' => 'DISH TYPE(S) WITH PRICE',
@@ -56,6 +57,17 @@ return [
     ],
     'app_id' => '#',
     'app_enter' => 'Enter',
+=======
+    'table-mgmt' => [
+        'title' => 'Table',
+        'table_no' => 'Table No',
+        'capacity' => 'Capacity',
+        'vacant' => 'Vacant',
+        'booked' => 'Booked'
+    ],
+    'app_id' => '#',
+    'app_all' => 'All',
+>>>>>>> logout
     'app_action' => 'Action',
     'app_created_at' => 'Created At',
     'app_deleted_at' => 'Deleted At',
@@ -74,9 +86,12 @@ return [
     'app_restore' => 'Restore',
     'app_permanently' => 'Permanently',
     'app_status' => 'Status',
+<<<<<<< HEAD
     'app_featured' => 'Featured',
     'app_here' => 'Here',
     'app_read_more' => 'Read more...',
     'app_close' => 'Close',
     'app_additional_settings' => 'Additional Settings'
+=======
+>>>>>>> logout
 ];

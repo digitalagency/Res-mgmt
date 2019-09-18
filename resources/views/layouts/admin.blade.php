@@ -19,9 +19,20 @@
             <section class="content-header">
                 <h1>
                     @yield('page-title')
+<<<<<<< HEAD
                 </h1>
             </section>
              <!-- Main content  starts here-->
+=======
+                    <small>@yield('page-sub-title')</small>
+                </h1>
+            </section>
+            {{ Breadcrumbs::render() }}
+            
+
+
+            <!-- Main content  starts here-->
+>>>>>>> logout
             <section class="content">
                 <div class="container-fluid">
                     {{ Breadcrumbs::render() }}
