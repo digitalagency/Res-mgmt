@@ -46,23 +46,25 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/jquery.fileupload-validate.min.js"></script>
     <!-- The File Upload user interface plugin -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/jquery.fileupload-ui.min.js"></script>
-    
+
+    <!--jQuery Form Validation-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+
     <script src="{{asset('admin/js/toastr.min.js')}}"></script>
 
     <script>
-
+        toastr.options = {
+            "closeButton": true,
+            "newestOnTop": true,
+            "progressBar": true,
+            "positionClass": "toast-bottom-left",
+            "preventDuplicates": true,
+            "showDuration": "300",
+            "hideDuration": "5000",
+            "timeOut": "0",
+            "extendedTimeOut": "0",
+        };
         @if(Session::has('success'))
-            toastr.options = {
-                "closeButton": true,
-                "newestOnTop": true,
-                "progressBar": true,
-                "positionClass": "toast-bottom-left",
-                "preventDuplicates": true,
-                "showDuration": "300",
-                "hideDuration": "5000",
-                "timeOut": "0",
-                "extendedTimeOut": "0",
-            };
             toastr.success("{{Session::get('success')}}");
         @endif
         @if(Session::has('info'))

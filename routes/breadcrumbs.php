@@ -189,3 +189,18 @@ Breadcrumbs::for('table.edit', function ($trail, $id) {
     $trail->parent('table.index');
     $trail->push($table->table_no, route('table.edit', $table->table_no));
 });
+
+/**
+ *  Order Breadcrumb
+ */
+
+// Home / Orders /
+Breadcrumbs::for('order.index', function ($trail) {
+    $trail->parent('home');
+    $trail->push('Orders', route('order.index'));
+});
+// Home / Orders / New Order
+Breadcrumbs::for('order.create', function ($trail) {
+    $trail->parent('order.index');
+    $trail->push('New Order', route('order.create'));
+});

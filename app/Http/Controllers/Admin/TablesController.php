@@ -122,4 +122,22 @@ class TablesController extends Controller
         Session::flash('success', 'Table Deleted Successfully!!!');
         return redirect()->back();
     }
+
+    /**
+     * Updates the status of a table
+     * 
+     * @param  int  $id
+     * @return \Illuminate\Http\Response
+     */
+    public function updateTableStatus($id)
+    {
+        $table = Table::findOrFail($id);
+        if($table->status == Table::VACANT){
+            $table->status = Table::OCCUPIED;
+        }else{
+            $table->status = Table::VACANT;
+        }
+        $table->save();
+        return $table;
+    }
 }

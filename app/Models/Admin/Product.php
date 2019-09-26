@@ -14,6 +14,7 @@ class Product extends Model
 		'name', 'price', 'description', 'slug', 'category_id','status','featured','image',
 		'meta_title', 'meta_keywords', 'meta_description'
 	];
+	protected $hidden = ['pivot'];
 
 	//Add a prefix to a price column data before displaying to a user
 	public function getPriceAttribute($value){
@@ -43,6 +44,11 @@ class Product extends Model
 		return $this->hasMany(ImageManager::class);
 	}
 
+	public function orders()
+	{
+		return $this->hasMany(Order::class, 'product_order');
+	}
+
 	/**
 	 * Maping one-to-one relationship between Product and Featured Image
 	 */
@@ -57,6 +63,4 @@ class Product extends Model
 	{
 		return $query->where($attribute, $value)->first();
 	}
-
-
 }

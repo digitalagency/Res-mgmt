@@ -58,7 +58,6 @@ label{
     font-weight: 800;
     text-decoration: underline;
 }
-<<<<<<< HEAD
 .switch {
     position: relative;
     display: inline-block;
@@ -187,6 +186,19 @@ tr[data-href]{
     height: 155px;
 }
 
+label.error{
+    color: red;
+    font-size: 15px;
+    display: block;
+    margin-top: 5px;
+}
+select.error{
+    border: 1px solid red;
+    font-weight: 300;
+    color: red;
+    font-size: 16px;
+}
+
 /* For javascript */
 .featured-image{
     border: 5px solid rgb(117, 113, 167)!important;
@@ -196,9 +208,9 @@ tr[data-href]{
 }
 .show-action-btns{
     display: flex;
-=======
+}
 .breadcrumb{
-    margin: 20px 30px;
+    margin: 20px 0px;
 }
 .main-header>.navbar{
     margin-left: 300px;
@@ -208,5 +220,4 @@ tr[data-href]{
 }
 .box-header a:last-child{
     margin-right: 10px;
->>>>>>> logout
 }

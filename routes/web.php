@@ -56,5 +56,9 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     Route::resource('product', 'Admin\ProductController', ['except' => 'show']);
     Route::delete('/image/delete/{id}', 'Admin\ImageController@destroy')->name('product.image.destroy');
 
-    
+    /**
+     * Order Routes
+     */
+    Route::resource('category.product', 'Admin\Order\CategoryProductController', ['only' => 'index']);
+    Route::resource('order', 'Admin\Order\OrderController');
 });
