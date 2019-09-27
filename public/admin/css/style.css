@@ -221,3 +221,6 @@ select.error{
 .box-header a:last-child{
     margin-right: 10px;
 }
+#more{
+    display: none;
+}

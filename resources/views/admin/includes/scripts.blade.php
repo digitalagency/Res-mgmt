@@ -4,7 +4,11 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" defer></script>
     <!-- jQuery UI 1.12.1 -->
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js" defer></script>
+<<<<<<< HEAD
     
+=======
+
+>>>>>>> 151a5fef7a6889386d189031eb40b7de3903ab86
     <!-- Bootstrap 3.3.2 JS -->
     <script src="{{asset('admin/bootstrap/js/bootstrap.min.js')}}" type="text/javascript"></script>    
     
@@ -24,6 +28,7 @@
     <!-- AdminLTE App -->
     <script src="{{asset('admin/js/app.min.js')}}" type="text/javascript"></script>    
 
+<<<<<<< HEAD
     <!-- The jQuery UI widget factory, can be omitted if jQuery UI is already included -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/js/vendor/jquery.ui.widget.min.js"></script>
     <!-- The Templates plugin is included to render the upload/download listings -->
@@ -72,9 +77,23 @@
             toastr.info("{{Session::get('info')}}");
         @endif
     </script>
+=======
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.4/js/fileinput.js" defer></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.4/themes/fa/theme.js" defer></script>
+>>>>>>> 151a5fef7a6889386d189031eb40b7de3903ab86
+
+    <!-- for time picker -->
+    <script src="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.js"></script>
+
+    <script type="text/javascript" src="datepair.js"></script>
 
     <!--Custom Script-->
     <script src="{{asset('admin/js/main.js')}}" defer></script>
+<<<<<<< HEAD
     <!-- multiple image upload  -->
     <script src="{{asset('admin/js/multiImage.js')}}" defer></script>
+=======
+
+    
+>>>>>>> 151a5fef7a6889386d189031eb40b7de3903ab86
 

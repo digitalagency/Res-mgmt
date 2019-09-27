@@ -1,6 +1,4 @@
-    
-    
-    
+  
     <!-- Bootstrap 3.3.4 -->
     <link href="{{asset('admin/bootstrap/css/bootstrap.min.css')}}" rel="stylesheet" type="text/css" />    
     <!-- FontAwesome 4.3.0 -->
@@ -23,6 +21,7 @@
     <!--DataTables-->
     <link href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.min.css" rel="stylesheet">
     <link href="https://cdn.datatables.net/buttons/1.5.6/css/buttons.dataTables.min.css" rel="stylesheet">
+
     <link rel="stylesheet"  href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-fileinput/5.0.4/css/fileinput.min.css">
     <link
       rel="stylesheet"
@@ -41,3 +40,11 @@
     <link rel="stylesheet" href="{{asset('admin/css/toastr.min.css')}}">
     <!--Custom CSS-->
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
+
+    <!-- multiple tabs -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <link rel="stylesheet" href="/resources/demos/style.css">
+
+    <!-- for time picker-->
+    <link rel="styleshee" type="text/css" href="jquery.timepicker.css" />
+    <link rel="stylesheet" href="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.css">

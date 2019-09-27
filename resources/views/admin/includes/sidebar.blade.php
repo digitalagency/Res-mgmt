@@ -5,21 +5,20 @@
     <!-- Sidebar user panel -->
     <div class="user-panel">
         <div class="pull-left image">
-        <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
+            <img src="dist/img/user2-160x160.jpg" class="img-circle" alt="User Image" />
         </div>
         <div class="pull-left info">
-        <p>Alexander Pierce</p>
-
-        <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
+            <p>Alexander Pierce</p>
+            <a href="#"><i class="fa fa-circle text-success"></i> Online</a>
         </div>
     </div>
     <!-- search form -->
     <form action="#" method="get" class="sidebar-form">
         <div class="input-group">
-        <input type="text" name="q" class="form-control" placeholder="Search..."/>
-        <span class="input-group-btn">
-            <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
-        </span>
+            <input type="text" name="q" class="form-control" placeholder="Search..."/>
+            <span class="input-group-btn">
+                <button type='submit' name='search' id='search-btn' class="btn btn-flat"><i class="fa fa-search"></i></button>
+            </span>
         </div>
     </form>
     <!-- /.search form -->
@@ -146,7 +145,11 @@
         @can('user-access')
             <li class="treeview">
                 <a href="#">
+<<<<<<< HEAD
                     <i class="fas fa-user"></i> <span>@lang('sidebar.user-mgmt.title')</span>
+=======
+                    <i class="fa fa-share" style="margin-right: 4px;"></i> <span>@lang('sidebar.user-mgmt.title')</span>
+>>>>>>> 151a5fef7a6889386d189031eb40b7de3903ab86
                     <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -194,8 +197,13 @@
         @can('category-access')
             <li class="treeview">
                 <a href="#">
+<<<<<<< HEAD
                     <i class="fas fa-copyright"></i> <span>@lang('sidebar.cat-mng.title')</span>
                     <i class="fa fa-angle-left pull-right"></i>
+=======
+                <i class="fas fa-copyright" style="margin-right: 6px;"></i> <span>@lang('sidebar.cat-mng.title')</span>
+                <i class="fa fa-angle-left pull-right"></i>
+>>>>>>> 151a5fef7a6889386d189031eb40b7de3903ab86
                 </a>
                 <ul class="treeview-menu">
                     @can('category-view')
@@ -218,7 +226,11 @@
         @can('product-access')
             <li class="treeview">
                 <a href="#">
+<<<<<<< HEAD
                 <i class="fas fa-file-powerpoint"></i> <span>@lang('sidebar.product-mgmt.title')</span>
+=======
+                <i class="fas fa-file-powerpoint" style="margin-right: 6px;"></i> <span>Product Management</span>
+>>>>>>> 151a5fef7a6889386d189031eb40b7de3903ab86
                 <i class="fa fa-angle-left pull-right"></i>
                 </a>
                 <ul class="treeview-menu">
@@ -226,7 +238,48 @@
                     
                     <li><a href="{{route('product.create')}}"><i class="fa fa-circle-o"></i>@lang('sidebar.product-mgmt.add-product')</a></li>
                 </ul>
-            </li>     
+            </li>
+            <li class="treeview">
+                <a href="#">
+                <i class="fas fa-user-circle" style="margin-right: 6px;"></i> <span>Manage Profile</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <!-- <li><a href="{{route('profileHeader.index')}}"><i class="fa fa-circle-o"></i>Header</a></li> -->
+                    <li>
+                        <a href="#"><i class="fa fa-circle-o"></i> Header <i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{route('profileHeader.index')}}"><i class="fa fa-circle-o"></i>List Header Content</a></li>
+                            <li><a href="{{route('profileHeader.create')}}"><i class="fa fa-circle-o"></i>Add Header Content</a></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#"><i class="fa fa-circle-o"></i>Footer<i class="fa fa-angle-left pull-right"></i></a>
+                        <ul class="treeview-menu">
+                            <li><a href="{{route('footerFind.index')}}"><i class="fa fa-circle-o"></i>List Footer Content</a></li>
+                            <li><a href="{{route('footerFind.create')}}"><i class="fa fa-circle-o"></i>Add footer content</a></li>
+                        </ul>
+                    </li>
+                    
+                </ul>
+            </li>
+            <li class="treeview">
+                <a href="{{route('message.index')}}">
+                    <i class="fas fa-envelope" style="margin-right: 7px;"></i><span>View Messages</span>
+                </a>
+            </li>
+            <!-- <li class="treeview">
+                <a href="#">
+                <i class="fab fa-hotjar" style="margin-right: 7px;"></i></i> <span>Manage Chef</span>
+                <i class="fa fa-angle-left pull-right"></i>
+                </a>
+                <ul class="treeview-menu">
+                    <li><a href="#"><i class="fa fa-circle-o"></i> List Chefs</a></li>
+                    
+                    <li><a href="#"><i class="fa fa-circle-o"></i> Add New Chef</a></li>
+                </ul>
+            </li> -->
+
         @endcan
       <!--   <li><a href="documentation/index.html"><i class="fa fa-book"></i> <span>Documentation</span></a></li>
         <li class="header">LABELS</li>

@@ -7,6 +7,7 @@ use Illuminate\Notifications\Notifiable;
 use Illuminate\Contracts\Auth\MustVerifyEmail;
 use Illuminate\Foundation\Auth\User as Authenticatable;
 use App\Models\Admin\Role;
+use App\Models\Admin\Employee_description;
 
 class User extends Authenticatable
 {
@@ -18,7 +19,7 @@ class User extends Authenticatable
      * @var array
      */
     protected $fillable = [
-        'name', 'email', 'password', 'role_id'
+        'name', 'email', 'password', 'role_id', 'description', 'image', 'address', 'facebook', 'instagram', 'twitter'
     ];
 
     /**
@@ -38,6 +39,7 @@ class User extends Authenticatable
     protected $casts = [
         'email_verified_at' => 'datetime',
     ];
+    
     public function role()
     {
         return $this->belongsTo(Role::class);
@@ -45,5 +47,8 @@ class User extends Authenticatable
     public function orders()
     {
         return $this->hasMany(Order::class);
+    }
+    public function description(){
+        return $this->hasOne(Employee_description::class);
     }
 }

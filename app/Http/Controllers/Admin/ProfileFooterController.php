@@ -1,10 +1,15 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
+use Illuminate\Support\Facades\Gate;
 
-class AdminProductController extends Controller
+use Session;
+use App\Models\Admin\Profile;
+
+class ProfileFooterController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -23,7 +28,10 @@ class AdminProductController extends Controller
      */
     public function create()
     {
-        //
+        if (!Gate::allows('footer-add')) {
+            return abort(401);
+        }
+        return view('admin.profileFooter.create');
     }
 
     /**

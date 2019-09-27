@@ -22,6 +22,7 @@ class UsersController extends Controller
         if(!Gate::allows('employee-view')){
             return abort(401);
         }
+        // dd(User::all());
         return view('admin.users.index')->with('users', User::all());
     }
 
@@ -50,18 +51,45 @@ class UsersController extends Controller
             return abort(401);
         }
         $this->validate($request, [
-            'name' => 'required|max:200',
+            'name' => 'required|max:50',
             'email' => 'required|email|max:250',
-            'password' => 'required|min:8'
+            'password' => 'required|min:8',
+            'image.*' => 'image|mimes:jpeg,png,jpg,gif,svg|max:2048'
         ]);
+        $user = new User();
         $password = Hash::make($request->password);
-        User::create([
-            'name' => $request->name,
-            'email' => $request->email,
-            'role_id' => $request->role,
-            'password' => $password,
 
-        ]);
+        if($request->hasFile('image'))
+        {
+            $imageName = time().$request->image->getClientOriginalName();
+            $request->image->move(public_path('images'), $imageName);
+
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'role_id' => $request->role,
+                'password' => $password,
+                'description' => $request->description,
+                'address' => $request->address,
+                'image' => $imageName,
+                'facebook' => $request->facebook,
+                'instagram' => $request->instagram,
+                'twitter' => $request->twitter,
+            ]);
+        }
+        else{
+            $user = User::create([
+                'name' => $request->name,
+                'email' => $request->email,
+                'role_id' => $request->role,
+                'password' => $password,
+                'description' => $request->description,
+                'address' => $request->address,
+                'facebook' => $request->facebook,
+                'instagram' => $request->instagram,
+                'twitter' => $request->twitter,
+            ]);
+        }
         Session::flash('success', "Employee Created Successfully");
 
         return redirect()->route('employee.index');
@@ -90,8 +118,11 @@ class UsersController extends Controller
         {
             return abort(401);
         }
+    
         return view('admin.users.edit')->with('user', User::find($id))
                                         ->with('roles', Role::all());
+                                        
+                                        
     }
 
     /**
@@ -106,7 +137,27 @@ class UsersController extends Controller
         if (!Gate::allows('employee-edit')) {
             return abort(401);
         }
-        User::find($id)->update($request->all());
+        $user = User::findOrFail($id);
+
+        if($request->hasFile('image'))
+        {
+            $imageName = time().$request->image->getClientOriginalName();
+            $request->image->move(public_path('images'), $imageName);
+
+            $user->name = $request->input('name');
+            $user->role_id = $request->input('role_id');
+            $user->email = $request->input('email');
+            $user->description = $request->input('description');
+            $user->address = $request->input('address');
+            $user->facebook = $request->input('facebook');
+            $user->image = $imageName;
+            $user->instagram = $request->input('instagram');
+            $user->twitter = $request->input('twitter');
+        }
+        else{
+            User::find($id)->update($request->all());
+        }
+        $user->save();
 
         Session::flash('success', 'Employee Updated Successfully!!!');
 

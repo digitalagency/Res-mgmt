@@ -17,6 +17,7 @@
                     <tr>
                         <th>@lang('global.employee.fields.name')</th>
                         <th>@lang('global.employee.fields.email')</th>
+                        <th>@lang('global.employee.fields.image')</th>
                         <th>@lang('global.role.fields.name')</th>
                         <th>@lang('global.app_created_at')</th>
                         @can('employee-action')
@@ -30,15 +31,23 @@
                             <tr>
                                 <td>{{$user->name}}</td>
                                 <td>{{$user->email}}</td>
-                                <td>{{$user->role->role}}</td>
+                                <!-- retrieves the images from database and displays in the index page -->
+                                <td><img src="{{ asset('images')}}/{{ $user->image }}" style="height: 70%; width: 70%;"></td>
+                               <td>{{$user->role->role}}</td>
                                 <td>{{$user->created_at->toFormattedDateString()}}</td>
+
+                                <!-- checks if the user have access to action or not -->
                                 @can('employee-action')
                                     <td class="action">
+
+                                        <!-- directs to different page if the user have access to edit the employees -->
                                         @can('employee-edit')
                                             <a href="{{route('employee.edit', ['id' => $user->id])}}" data-toggle="tooltip" title="@lang('global.app_edit')" class="btn btn-info btn-sm">
                                                 <i class="far fa-edit"></i>
                                             </a>
                                         @endcan
+
+                                        <!-- deleted the stored data if the user have access to delete the information of employee -->
                                         @can('employee-delete')
                                             <form action="{{route('employee.destroy', ['id' => $user->id])}}" method="post">
                                                 @csrf

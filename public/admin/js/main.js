@@ -23,6 +23,7 @@ $(document).ready(function () {
         //     visible: false
         // }]
     });
+
     $("input[type='search']").addClass('form-control');
     $("input[type='search']").css({"font-weight": "500", 'width':'250px', 'padding-left': '10px'});
 
@@ -263,6 +264,12 @@ $(document).ready(function () {
         }
     });
 
+    $( function() {
+        $( "#tabs" ).tabs();
+    });
+
+    // for uploading file
+
     //Events for quantity and display price on event trigger
     $('#quantity').keyup(function(){
         $("#price").val($("#quantity").val() * dishPrice);
@@ -455,6 +462,17 @@ $(document).ready(function () {
             }
         })
     })
+    $("body").on("click", ".btn-danger", function () {
+        $(this).parents(".control-group").remove();
+    });
+
+    $('#timeRange .time').timepicker({
+        'showDuration': true,
+        'timeFormat': 'g:ia'
+    });
+
+    var basicExampleEl = document.getElementById('timeRange');
+    var datepair = new Datepair(basicExampleEl);
 });
 
 //convert form data into json

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.login')
 
 @section('content')
 <div class="container">
@@ -58,6 +58,15 @@
 
                             <div class="col-md-6">
                                 <input id="password-confirm" type="password" class="form-control" name="password_confirmation" required autocomplete="new-password">
+                            </div>
+                        </div>
+
+                        <div class="form-group row">
+                            <label for="role" class="col-md-4 col-form-label text-md-right">@lang('global.role.fields.name')</label>
+                            <div class="col-md-6">
+                                <select name="role" id="role" class="form-control">
+                                    
+                                </select>
                             </div>
                         </div>
 
