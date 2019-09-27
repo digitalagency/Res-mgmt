@@ -2,6 +2,9 @@
 @section('title', 'All Orders')
 
 @section('content')
+<div class="input-group date">
+    <input type="text" class="form-control depart-date" id="depart-date" name="date_of_depart">
+</div>
     @foreach ($orders as $key => $monthOrders)
         <div class="box">
             <div class="box-body">
@@ -52,5 +55,4 @@
         </div>
         {{-- {{ $orders->links() }} --}}
     @endforeach
-    @include('admin.includes.script_components.datatables')
 @endsection

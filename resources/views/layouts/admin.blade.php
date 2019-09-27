@@ -5,7 +5,6 @@
         <title>@yield('title') | {{ config('app.name') }}</title>
         <meta content='width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no' name='viewport'>
         @include('admin.includes.styles')
-        @include('admin.includes.scripts')
     </head>
     <body class="skin-blue sidebar-mini">
         <div class="wrapper">
@@ -197,6 +196,6 @@
         </aside><!-- /.control-sidebar -->
         <div class='control-sidebar-bg'></div>
         </div><!-- ./wrapper -->
-        
+        @include('admin.includes.scripts')
     </body>
 </html>

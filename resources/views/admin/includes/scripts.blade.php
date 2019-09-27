@@ -49,7 +49,8 @@
 
     <!--jQuery Form Validation-->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
-
+    <!--Datepicker-->
+    <script src="{{asset('admin/plugins/datepicker/js/datepicker.js')}}" type="text/javascript"></script>
     <script src="{{asset('admin/js/toastr.min.js')}}"></script>
 
     <script>

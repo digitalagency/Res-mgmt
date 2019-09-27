@@ -16,14 +16,8 @@
     <link href="{{asset('admin/plugins/iCheck/flat/blue.css')}}" rel="stylesheet" type="text/css" />
     <!--Magnific-Popup-->
     <link href="{{asset('admin/css/magnific-popup.css')}}" rel="stylesheet" type="text/css" />
-    <!-- Morris chart -->
-    <link href="{{asset('admin/plugins/morris/morris.css')}}" rel="stylesheet" type="text/css" />
-    <!-- jvectormap -->
-    <link href="{{asset('admin/plugins/jvectormap/jquery-jvectormap-1.2.2.cs')}}s" rel="stylesheet" type="text/css" />
     <!-- Date Picker -->
-    <link href="{{asset('admin/plugins/datepicker/datepicker3.css')}}" rel="stylesheet" type="text/css" />
-    <!-- Daterange picker -->
-    <link href="{{asset('admin/plugins/daterangepicker/daterangepicker-bs3.css')}}" rel="stylesheet" type="text/css" />
+    <link href="{{asset('admin/plugins/datepicker/css/datepicker.min.css')}}" rel="stylesheet" type="text/css" />
     <!-- bootstrap wysihtml5 - text editor -->
     <link href="{{asset('admin/plugins/bootstrap-wysihtml5/bootstrap3-wysihtml5.min.css')}}" rel="stylesheet" type="text/css" />
     <!--DataTables-->
@@ -38,12 +32,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload-ui.min.css" />
     <!-- CSS adjustments for browsers with JavaScript disabled -->
-    <noscript
-      ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload-noscript.min.css"
-    /></noscript>
-    <noscript
-      ><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload-ui-noscript.min.css"
-    /></noscript>
-    <!--Custom CSS-->
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload-noscript.min.css"/>
+    </noscript>
+    <noscript>
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/blueimp-file-upload/10.1.0/css/jquery.fileupload-ui-noscript.min.css"/>
+    </noscript>
     <link rel="stylesheet" href="{{asset('admin/css/toastr.min.css')}}">
+    <!--Custom CSS-->
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
