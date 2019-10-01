@@ -2,10 +2,14 @@
 @section('title', 'All Orders')
 
 @section('content')
-<div class="input-group date">
-    <input type="text" class="form-control depart-date" id="depart-date" name="date_of_depart">
-</div>
-    @foreach ($orders as $key => $monthOrders)
+
+    <div id="reportrange" style="background: #fff; cursor: pointer; padding: 5px 10px; border: 1px solid #ccc; width: 100%">
+        <input hidden id="route" value="{{route('order.range')}}">
+        <i class="fa fa-calendar"></i>&nbsp;
+        <span></span> <i class="fa fa-caret-down"></i>
+    </div>
+    <div class="orders"></div>
+    {{-- @foreach ($orders as $key => $monthOrders)
         <div class="box">
             <div class="box-body">
                 <h4>{{$key}}</h4>
@@ -53,6 +57,5 @@
                 </table>
             </div>
         </div>
-        {{-- {{ $orders->links() }} --}}
-    @endforeach
+    @endforeach --}}
 @endsection

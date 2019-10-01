@@ -21,11 +21,11 @@ class OrderController extends Controller
      */
     public function index()
     {
-        $orders = Order::with('payment', 'employee', 'table')->orderBy('created_at', 'desc')->get()->groupBy(function ($order) {
-            return $order->created_at->format('M-y');
-        });
+        // $orders = Order::with('payment', 'employee', 'table')->orderBy('created_at', 'desc')->get()->groupBy(function ($order) {
+        //     return $order->created_at->format('M-y');
+        // });
         // dd($orders->toArray());
-        return view('admin.orders.index')->with('orders', $orders);
+        return view('admin.orders.index');
     }
 
     /**

@@ -40,11 +40,14 @@
     <link rel="stylesheet" href="{{asset('admin/css/toastr.min.css')}}">
     <!--Custom CSS-->
     <link rel="stylesheet" href="{{asset('admin/css/style.css')}}">
-
-    <!-- multiple tabs -->
-    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
-    <link rel="stylesheet" href="/resources/demos/style.css">
-
+    
     <!-- for time picker-->
     <link rel="styleshee" type="text/css" href="jquery.timepicker.css" />
     <link rel="stylesheet" href="//jonthornton.github.io/jquery-timepicker/jquery.timepicker.css">
+    <!-- multiple tabs -->
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">
+    <!--Datepicker-->
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/daterangepicker/daterangepicker.css" />
+    <!--Custom CSS-->
+    <link rel="stylesheet" href="/resources/demos/style.css">
+

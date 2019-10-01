@@ -226,7 +226,7 @@ $(document).ready(function () {
     });
 
     /**
-     * Show dish type on dish change
+     * Show dish  on dish category change
      */
     $('#dishCategory').change(function(){
         dishCategoryId = $(this).val();
@@ -471,8 +471,50 @@ $(document).ready(function () {
         'timeFormat': 'g:ia'
     });
 
-    var basicExampleEl = document.getElementById('timeRange');
-    var datepair = new Datepair(basicExampleEl);
+    // var basicExampleEl = document.getElementById('timeRange');
+    // var datepair = new Datepair(basicExampleEl);
+
+    var startDate = moment();
+    var endDate = moment();
+
+    function dateDisplay(startDate, endDate) {
+        $('#reportrange span').html(startDate.format('MMMM D, YYYY') + ' - ' + endDate.format('MMMM D, YYYY'));
+        orderList(startDate, endDate);
+    }
+
+    $('#reportrange').daterangepicker({
+        singleDatePicker: false,
+        showDropdowns: true,
+        startDate: startDate,
+        endDate: endDate,
+        minYear: 2010,
+        maxDate: moment(),
+        ranges: {
+            'Today': [moment(), moment()],
+            'Yesterday': [moment().subtract(1, 'days'), moment().subtract(1, 'days')],
+            'Last 7 Days': [moment().subtract(6, 'days'), moment()],
+            'Last 30 Days': [moment().subtract(29, 'days'), moment()],
+            'This Month': [moment().startOf('month'), moment().endOf('month')],
+            'Last Month': [moment().subtract(1, 'month').startOf('month'), moment().subtract(1, 'month').endOf('month')]
+        },
+        locale: {
+            cancelLabel: 'Clear',
+        }
+    }, dateDisplay);
+    dateDisplay(startDate, endDate);
+    
+    function orderList(startDate, endDate){
+        startDate = startDate.format('YYYY-MM-DD');
+        endDate = endDate.format('YYYY-MM-DD');
+        $.ajax({
+            method: 'get',
+            url: $('#route').val(),
+            data: {startDate, endDate},
+            success: function(data){
+                renderOrderList(data);
+            }
+        })
+    }
 });
 
 //convert form data into json
@@ -483,6 +525,70 @@ function convertIntoJson(form){
         json[this.name] = this.value || '';
     });
     return json;
+}
+
+//render the orders in a page
+function renderOrderList(orders){
+    $('.orders').empty();
+    $.each(orders, function(key, monthOrders){
+        $('.orders').append(
+            $('<div>', {class: 'box'}).append(
+                $('<div>', {class: 'box-body'}).append(
+                    $('<h4>', {text: key})
+                ),
+                $('<table>',{class: 'table order-list table-bordered table-hover'}).append(
+                    $('<thead>').append(
+                        $('<tr>').append(
+                            $('<th>',{text: 'Order No.'}),
+                            $('<th>',{text: 'Table'}),
+                            $('<th>',{text: 'Waiter'}),
+                            $('<th>',{text: 'Order Value'}),
+                            $('<th>',{text: 'Status'}),
+                            $('<th>', {text: 'Action'}),
+                        )
+                    ),
+                    $('<tbody>').append(function(){
+                        var container = $('<div></div>');
+                        $.each(monthOrders, function(key, order){
+                            console.log(order);
+                            container.append($('<tr>').append(
+                                $('<td>').html(order.id),
+                                $('<td>').html(order.table_no),
+                                $('<td>').html(order.name),
+                                $('<td>').html(order.gross_price),
+                                $('<td>').html(order.status),
+                                $('<td>').append(
+                                    $('<div>').attr('class','btn-group').append(
+                                        $('<a>').attr({
+                                            href:'',
+                                            class: 'btn btn-success'
+                                        }).append(
+                                            $('<i>').attr('class', 'far fa-edit')
+                                        ),
+                                        $('<a>').attr({
+                                            href:'',
+                                            class: 'btn btn-info'
+                                        }).append(
+                                            $('<i>').attr('class', 'fas fa-print')
+                                        ),
+                                        $('<a>').attr({
+                                            href:'',
+                                            class: 'btn btn-danger order-delete'
+                                        }).append(
+                                            $('<i>').attr('class', 'far fa-trash-alt')
+                                        ),
+
+                                    )
+                                )
+                            ));
+                        });
+                        return container.html()
+                    })
+                )
+
+            )
+        )
+    });
 }
 
 

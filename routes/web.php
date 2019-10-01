@@ -76,6 +76,7 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function () {
     /**
      * Order Routes
      */
+    Route::get('/order/range', 'Admin\Order\DateRangeOrderController@orderRange')->name('order.range');
     Route::resource('category.product', 'Admin\Order\CategoryProductController', ['only' => 'index']);
     Route::resource('order', 'Admin\Order\OrderController');
     Route::get('employee/description/{id}', 'Admin\UsersController@description')->name('employee.description');
